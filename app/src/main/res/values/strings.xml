@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">QuickPhrase</string>
+    <string name="logo_description">QuickPhrase Logo</string>
+
+    <!-- Welcome screen -->
+    <string name="welcome_text">Welcome</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="btn_sign_in">Sign In</string>
+    <string name="btn_create_account">Create Account</string>
+
+    <!-- Create Account screen -->
+    <string name="create_account_text">Create Account</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="already_have_account">Already have an account?</string>
+    <string name="sign_in">Sign In</string>
+
+    <!-- Main screen greeting -->
+    <string name="home_greeting">Welcome to QuickPhrase</string>
+</resources>
