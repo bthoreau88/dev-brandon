@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050507;
+  --foreground: #e8eef5;
+  --muted: #8b95a3;
+  --accent: #22d3ee; /* cyan */
+  --accent-amber: #f59e0b;
+  --panel: rgba(255, 255, 255, 0.04);
+  --panel-border: rgba(255, 255, 255, 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-amber: var(--accent-amber);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ---- Frame-sequence sections: tall parent drives scroll ---- */
+.scroll-animation {
+  height: 400vh;
+}
+@media (max-width: 1024px) {
+  .scroll-animation {
+    height: 350vh;
+  }
+}
+@media (max-width: 768px) {
+  .scroll-animation {
+    height: 300vh;
+  }
+}
+
+/* ---- Glass panel ---- */
+.glass {
+  background: var(--panel);
+  border: 1px solid var(--panel-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* ---- Cyan glow text ---- */
+.glow-cyan {
+  text-shadow: 0 0 24px rgba(34, 211, 238, 0.45);
+}
+
+/* ---- Subtle scanline / grain ambiance ---- */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.025) 1px,
+    transparent 1px
+  );
+  background-size: 3px 3px;
+  mix-blend-mode: overlay;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.3);
+}
