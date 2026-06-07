@@ -1,165 +1,112 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { HERO } from "@/lib/frames";
+import Image from "next/image";
+
+const subjects = [
+  {
+    name: "DRYA",
+    tag: "SYS-7 // TAPE #1",
+    status: "COMBINE",
+    img: "/subjects/drya-select.png",
+  },
+  {
+    name: "THOREAU",
+    tag: "SYS-7 // TAPE-03",
+    status: "OPERATIONAL",
+    img: "/subjects/thoreau-portrait.png",
+  },
+];
 
 export function Hero() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const framesRef = useRef<HTMLImageElement[]>([]);
-  const heroTextRef = useRef<HTMLDivElement>(null);
-  const tickingRef = useRef(false);
-  const currentFrameRef = useRef(0);
-
-  const [loadProgress, setLoadProgress] = useState(0);
-  const [loaded, setLoaded] = useState(false);
-
-  // Preload every frame before the animation starts.
-  useEffect(() => {
-    let loadedCount = 0;
-    const imgs: HTMLImageElement[] = [];
-    const done = () => {
-      loadedCount++;
-      setLoadProgress(loadedCount / HERO.count);
-      if (loadedCount === HERO.count) setLoaded(true);
-    };
-    for (let i = 1; i <= HERO.count; i++) {
-      const img = new Image();
-      img.src = HERO.path(i);
-      img.onload = done;
-      img.onerror = done;
-      imgs.push(img);
-    }
-    framesRef.current = imgs;
-  }, []);
-
-  // Scroll-driven canvas engine (RAF + ticking ref, DPR-aware, cover-fit).
-  useEffect(() => {
-    if (!loaded) return;
-    const canvas = canvasRef.current;
-    const section = sectionRef.current;
-    if (!canvas || !section) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const drawFrame = (index: number) => {
-      const img = framesRef.current[index];
-      if (!img) return;
-      const cw = window.innerWidth;
-      const ch = window.innerHeight;
-      ctx.fillStyle = "#050507";
-      ctx.fillRect(0, 0, cw, ch);
-      const imgRatio = img.naturalWidth / img.naturalHeight;
-      const canvasRatio = cw / ch;
-      let drawW: number;
-      let drawH: number;
-      if (canvasRatio > imgRatio) {
-        drawW = cw;
-        drawH = cw / imgRatio;
-      } else {
-        drawH = ch;
-        drawW = ch * imgRatio;
-      }
-      if (cw <= 768) {
-        drawW *= 1.3;
-        drawH *= 1.3;
-      }
-      ctx.drawImage(img, (cw - drawW) / 2, (ch - drawH) / 2, drawW, drawH);
-    };
-
-    const resize = () => {
-      const dpr = window.devicePixelRatio || 1;
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      canvas.style.width = window.innerWidth + "px";
-      canvas.style.height = window.innerHeight + "px";
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      drawFrame(currentFrameRef.current);
-    };
-
-    const update = () => {
-      const rect = section.getBoundingClientRect();
-      const scrollable = section.offsetHeight - window.innerHeight;
-      const progress = Math.min(1, Math.max(0, -rect.top / scrollable));
-      const frameIndex = Math.min(
-        HERO.count - 1,
-        Math.floor(progress * HERO.count)
-      );
-      currentFrameRef.current = frameIndex;
-      drawFrame(frameIndex);
-      if (heroTextRef.current) {
-        heroTextRef.current.style.opacity = String(
-          Math.max(0, 1 - progress / 0.08)
-        );
-      }
-    };
-
-    const onScroll = () => {
-      if (tickingRef.current) return;
-      tickingRef.current = true;
-      requestAnimationFrame(() => {
-        update();
-        tickingRef.current = false;
-      });
-    };
-
-    resize();
-    update();
-    window.addEventListener("resize", resize);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      window.removeEventListener("resize", resize);
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, [loaded]);
-
   return (
-    <section ref={sectionRef} className="scroll-animation relative">
-      <div className="grain sticky top-0 h-screen overflow-hidden bg-background">
-        <canvas ref={canvasRef} className="block h-full w-full" />
+    <section className="grain relative flex min-h-screen flex-col justify-between overflow-hidden">
+      {/* background plate */}
+      <Image
+        src="/subjects/thoreau-title.png"
+        alt="OVS subject THOREAU"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center opacity-70"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-background" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-transparent" />
 
-        {/* cinematic vignette */}
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/90" />
+      {/* top HUD strip */}
+      <div className="relative z-10 mx-auto mt-28 flex w-full max-w-[1400px] items-center justify-between px-6 md:px-8">
+        <span className="mono text-[10px] tracking-[0.4em] text-teal">
+          OVS // ARCHIVE SYS-7
+        </span>
+        <span className="mono text-[10px] tracking-[0.4em] text-muted">
+          INFECTION RATE <span className="text-accent">18%</span>
+        </span>
+      </div>
 
-        {/* hero headline (fades out over first 8% of scroll) */}
-        <div
-          ref={heroTextRef}
-          className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
-        >
-          <span className="mb-5 font-mono text-xs tracking-[0.45em] text-accent">
-            IDENTITY&nbsp;WARFARE
-          </span>
-          <h1 className="glow-cyan text-[18vw] font-extrabold leading-[0.85] tracking-tighter md:text-[12vw]">
-            LIKENESS
-          </h1>
-          <p className="mt-4 max-w-[24ch] text-balance text-sm text-muted md:text-base">
-            Become anyone. Answer to no one. Scroll to enter the forge.
-          </p>
-          <div className="mt-10 flex flex-col items-center gap-2 text-muted">
-            <span className="font-mono text-[10px] tracking-[0.3em]">
-              SCROLL
-            </span>
-            <span className="h-10 w-px animate-pulse bg-gradient-to-b from-accent to-transparent" />
-          </div>
+      {/* title block */}
+      <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 md:px-8">
+        <span className="mono text-xs tracking-[0.45em] text-accent">
+          TAPE-03 // SUBJECT LIKENESS PROTOCOL
+        </span>
+        <h1 className="glow-accent mt-4 text-[20vw] font-extrabold leading-[0.82] tracking-tighter md:text-[13vw]">
+          LIKENESS
+        </h1>
+        <p className="mt-5 max-w-[42ch] text-balance text-sm text-muted md:text-base">
+          In OVS, identity is the only currency that survives. Wear a face long
+          enough and the host underneath forgets it was ever theirs.
+        </p>
+        <div className="mt-8 flex flex-wrap items-center gap-3">
+          <a
+            href="#intake"
+            className="mono rounded-sm bg-accent px-7 py-3 text-xs font-semibold tracking-[0.15em] text-black uppercase transition-transform hover:scale-105"
+          >
+            Enter OVS
+          </a>
+          <a
+            href="#subjects"
+            className="mono glass rounded-sm px-7 py-3 text-xs font-semibold tracking-[0.15em] uppercase transition-colors hover:text-teal"
+          >
+            View Subjects
+          </a>
         </div>
+      </div>
 
-        {/* preload overlay */}
-        {!loaded && (
-          <div className="absolute inset-0 z-50 flex flex-col items-center justify-center bg-background">
-            <span className="mb-6 font-mono text-xs tracking-[0.4em] text-accent">
-              CALIBRATING&nbsp;LIKENESS
-            </span>
-            <div className="h-px w-56 overflow-hidden bg-white/10">
-              <div
-                className="h-full bg-accent transition-[width] duration-150"
-                style={{ width: `${Math.round(loadProgress * 100)}%` }}
+      {/* character-select rail */}
+      <div className="relative z-10 mx-auto mb-10 w-full max-w-[1400px] px-6 md:px-8">
+        <span className="mono mb-3 block text-[10px] tracking-[0.4em] text-muted">
+          SELECT SUBJECT
+        </span>
+        <div className="flex gap-3">
+          {subjects.map((s) => (
+            <a
+              key={s.name}
+              href="#subjects"
+              className="hud-frame group relative flex w-44 items-end overflow-hidden rounded-sm border border-white/10 bg-black/40 p-3 transition-colors hover:border-accent/60"
+              style={{ height: 96 }}
+            >
+              <Image
+                src={s.img}
+                alt={s.name}
+                fill
+                sizes="180px"
+                className="object-cover opacity-50 transition-opacity group-hover:opacity-70"
               />
-            </div>
-            <span className="mt-4 font-mono text-[10px] text-muted">
-              {Math.round(loadProgress * 100)}%
-            </span>
-          </div>
-        )}
+              <div className="relative z-10">
+                <span className="mono block text-sm font-bold tracking-[0.2em]">
+                  {s.name}
+                </span>
+                <span className="mono block text-[9px] tracking-[0.2em] text-teal">
+                  {s.status}
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* scroll cue */}
+      <div className="absolute bottom-6 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2 text-muted">
+        <span className="mono text-[9px] tracking-[0.3em]">SCROLL</span>
+        <span className="h-8 w-px animate-pulse bg-gradient-to-b from-teal to-transparent" />
       </div>
     </section>
   );

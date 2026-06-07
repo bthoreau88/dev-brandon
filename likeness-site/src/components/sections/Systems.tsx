@@ -4,23 +4,23 @@ import { motion } from "framer-motion";
 
 const features = [
   {
-    title: "Character Forge",
-    body: "Sculpt a likeness from a single photo. Bone structure, skin, voiceprint — fully yours.",
+    title: "Likeness Intake",
+    body: "Receive a face from the OVS archive — skin, voiceprint, biometrics. It is not a disguise. It is an overwrite.",
     span: "md:col-span-2",
   },
   {
-    title: "Real-Time Morph",
-    body: "Swap identities mid-match with zero load. The engine renders you on the fly.",
+    title: "Biomech Sync",
+    body: "Augments bind in real time. Infection rate is your timer — and your power.",
     span: "",
   },
   {
-    title: "Trust Economy",
-    body: "Every face you wear carries reputation. Spend it. Burn it. Steal it.",
+    title: "Infection Spread",
+    body: "Every face carries debts. Inherit its access, its allies, its enemies.",
     span: "",
   },
   {
-    title: "Neural Disguise",
-    body: "AI opponents read micro-expressions. Hold your cover or get flagged.",
+    title: "OVS Oversight",
+    body: "The system watches every subject. Hold your likeness or get flagged for combine.",
     span: "md:col-span-2",
   },
 ];
@@ -54,13 +54,13 @@ export function Systems() {
           variants={item}
           className="font-mono text-xs tracking-[0.4em] text-accent"
         >
-          SYSTEMS · NOMINAL
+          OVS // PROTOCOLS
         </motion.span>
         <motion.h2
           variants={item}
           className="mt-4 max-w-[20ch] text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl"
         >
-          An engine built for deception.
+          A system built to overwrite.
         </motion.h2>
 
         <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3">

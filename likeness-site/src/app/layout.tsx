@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "LIKENESS — The Game",
+  title: "LIKENESS // OVS — TAPE-03",
   description:
-    "Become anyone. Answer to no one. LIKENESS is a sci-fi identity-warfare game where your face is your weapon.",
+    "In OVS, identity is the only currency that survives. LIKENESS is a gritty sci-fi game where a borrowed face overwrites the host beneath it. Subjects: DRYA, THOREAU.",
 };
 
 export default function RootLayout({

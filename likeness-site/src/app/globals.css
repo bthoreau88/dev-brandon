@@ -1,13 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #050507;
-  --foreground: #e8eef5;
-  --muted: #8b95a3;
-  --accent: #22d3ee; /* cyan */
-  --accent-amber: #f59e0b;
-  --panel: rgba(255, 255, 255, 0.04);
-  --panel-border: rgba(255, 255, 255, 0.1);
+  --background: #0a0b0d; /* graphite void */
+  --foreground: #e7e9ec; /* cold off-white */
+  --muted: #888d94; /* steel grey */
+  --accent: #e0531f; /* OVS burnt orange (the sash) */
+  --teal: #6fc6d6; /* cold HUD teal */
+  --panel: rgba(255, 255, 255, 0.035);
+  --panel-border: rgba(255, 255, 255, 0.09);
+  --steel: #14161a;
 }
 
 @theme inline {
@@ -15,7 +16,7 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
-  --color-amber: var(--accent-amber);
+  --color-teal: var(--teal);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -47,33 +48,65 @@ body {
   }
 }
 
-/* ---- Glass panel ---- */
+/* ---- Glass / HUD panel ---- */
 .glass {
   background: var(--panel);
   border: 1px solid var(--panel-border);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 }
 
-/* ---- Cyan glow text ---- */
-.glow-cyan {
-  text-shadow: 0 0 24px rgba(34, 211, 238, 0.45);
+/* ---- HUD corner brackets ---- */
+.hud-frame {
+  position: relative;
+}
+.hud-frame::before,
+.hud-frame::after {
+  content: "";
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-color: var(--teal);
+  opacity: 0.7;
+}
+.hud-frame::before {
+  top: 0;
+  left: 0;
+  border-top: 1px solid;
+  border-left: 1px solid;
+}
+.hud-frame::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
 }
 
-/* ---- Subtle scanline / grain ambiance ---- */
+/* ---- Orange glow ---- */
+.glow-accent {
+  text-shadow: 0 0 30px rgba(224, 83, 31, 0.4);
+}
+
+/* ---- Scanline grain ---- */
 .grain::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.025) 1px,
-    transparent 1px
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.02) 0px,
+    rgba(255, 255, 255, 0.02) 1px,
+    transparent 1px,
+    transparent 3px
   );
-  background-size: 3px 3px;
   mix-blend-mode: overlay;
 }
 
+.mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+}
+
 ::selection {
-  background: rgba(34, 211, 238, 0.3);
+  background: rgba(224, 83, 31, 0.35);
 }

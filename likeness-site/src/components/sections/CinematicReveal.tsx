@@ -147,7 +147,14 @@ export function CinematicReveal() {
   return (
     <section ref={sectionRef} className="scroll-animation relative">
       <div className="grain sticky top-0 h-screen overflow-hidden bg-background">
-        <canvas ref={canvasRef} className="block h-full w-full" />
+        {/* NOTE: placeholder footage, graded to the OVS look. Replace
+            /public/frames2 with a DRYA / THOREAU turntable or biomech-sync clip
+            (see README) and the grade can be eased back. */}
+        <canvas
+          ref={canvasRef}
+          className="block h-full w-full"
+          style={{ filter: "grayscale(0.7) contrast(1.06) brightness(0.82)" }}
+        />
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/85" />
 
         {/* intro headline */}
@@ -156,12 +163,10 @@ export function CinematicReveal() {
           className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center"
         >
           <span className="mb-4 font-mono text-xs tracking-[0.4em] text-accent">
-            THE&nbsp;REVEAL
+            OVS&nbsp;//&nbsp;TAPE-03
           </span>
-          <h2 className="text-4xl font-bold leading-tight tracking-tight md:text-6xl">
-            Who are you
-            <br />
-            when no one knows your face?
+          <h2 className="max-w-[18ch] text-4xl font-bold leading-tight tracking-tight md:text-6xl">
+            When the likeness takes hold, who is left underneath?
           </h2>
         </div>
 
@@ -197,14 +202,17 @@ export function CinematicReveal() {
           ref={outroRef}
           className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center opacity-0 transition-opacity duration-500"
         >
-          <h2 className="glow-cyan text-5xl font-extrabold tracking-tight md:text-7xl">
-            You are LIKENESS.
+          <span className="mono mb-3 text-xs tracking-[0.4em] text-teal">
+            SUBJECT STATUS
+          </span>
+          <h2 className="glow-accent text-5xl font-extrabold tracking-tight md:text-7xl">
+            COMBINE.
           </h2>
           <a
-            href="#play"
-            className="mt-8 rounded-full bg-accent px-8 py-3 text-sm font-semibold text-black transition-transform hover:scale-105"
+            href="#intake"
+            className="mono mt-8 rounded-sm bg-accent px-8 py-3 text-xs font-semibold tracking-[0.15em] text-black uppercase transition-transform hover:scale-105"
           >
-            Enter the Beta
+            Request Intake
           </a>
         </div>
 
@@ -212,7 +220,7 @@ export function CinematicReveal() {
         <div className="pointer-events-none absolute bottom-6 left-0 right-0 px-6 md:px-16">
           <div className="mb-2 flex items-center justify-between font-mono text-[10px] tracking-[0.25em] text-muted">
             <span ref={seqRef}>SEQ 001 / {CINE.count}</span>
-            <span>MORPH ENGINE · LIVE</span>
+            <span>OVS BIOMECH ENGINE · LIVE</span>
           </div>
           <div className="h-px w-full bg-white/10">
             <div
