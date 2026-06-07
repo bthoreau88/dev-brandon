@@ -1,11 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
-const links = [
+const anchors = [
   { label: "Subjects", href: "#subjects" },
-  { label: "Tape-03", href: "#reveal" },
-  { label: "System", href: "#systems" },
+  { label: "Visual DNA", href: "#visual-dna" },
+  { label: "Scenes", href: "#scenes" },
+];
+
+const routes = [
+  { label: "Room Testifies", href: "/room-testifies" },
+  { label: "Prompts", href: "/prompts" },
 ];
 
 export function Navbar() {
@@ -42,8 +48,8 @@ export function Navbar() {
           </span>
         </a>
 
-        <div className="hidden items-center gap-8 md:flex">
-          {links.map((l) => (
+        <div className="hidden items-center gap-7 md:flex">
+          {anchors.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -52,14 +58,23 @@ export function Navbar() {
               {l.label}
             </a>
           ))}
+          {routes.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="mono text-xs tracking-[0.2em] text-teal/80 uppercase transition-colors hover:text-foreground"
+            >
+              {l.label}
+            </Link>
+          ))}
         </div>
 
-        <a
-          href="#intake"
+        <Link
+          href="/prompts"
           className="mono rounded-sm bg-accent px-5 py-2 text-[11px] font-semibold tracking-[0.15em] text-black uppercase transition-transform hover:scale-105"
         >
-          Enter OVS
-        </a>
+          Prompt Library
+        </Link>
       </nav>
     </header>
   );
