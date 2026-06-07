@@ -1,19 +1,20 @@
 "use client";
 
 import Image from "next/image";
+import { asset } from "@/lib/base";
 
 const subjects = [
   {
     name: "DRYA",
     tag: "SYS-7 // TAPE #1",
     status: "COMBINE",
-    img: "/subjects/drya-select.png",
+    img: asset("/subjects/drya-select.png"),
   },
   {
     name: "THOREAU",
     tag: "SYS-7 // TAPE-03",
     status: "OPERATIONAL",
-    img: "/subjects/thoreau-portrait.png",
+    img: asset("/subjects/thoreau-portrait.png"),
   },
 ];
 
@@ -22,7 +23,7 @@ export function Hero() {
     <section className="grain relative flex min-h-screen flex-col justify-between overflow-hidden">
       {/* background plate */}
       <Image
-        src="/subjects/thoreau-title.png"
+        src={asset("/subjects/thoreau-title.png")}
         alt="OVS subject THOREAU"
         fill
         priority

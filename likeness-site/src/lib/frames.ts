@@ -1,16 +1,18 @@
 // Frame-sequence config. Swap these paths/counts when you drop in your own
 // rendered LIKENESS character footage (sliced to /public/frames/frame_0001.jpg ...).
 
+import { asset } from "./base";
+
 const pad = (i: number) => String(i).padStart(4, "0");
 
 export const HERO = {
   count: 169,
-  path: (i: number) => `/frames/frame_${pad(i)}.jpg`,
+  path: (i: number) => asset(`/frames/frame_${pad(i)}.jpg`),
 };
 
 export const CINE = {
   count: 169,
-  path: (i: number) => `/frames2/frame_${pad(i)}.jpg`,
+  path: (i: number) => asset(`/frames2/frame_${pad(i)}.jpg`),
 };
 
 // Scroll "beat" cards shown over the cinematic reveal. show/hide are 0–1 scroll

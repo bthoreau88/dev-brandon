@@ -2,12 +2,13 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { asset } from "@/lib/base";
 
 const subjects = [
   {
     name: "DRYA",
     code: "SYS-7 // TAPE #1",
-    img: "/subjects/drya-sheet.png",
+    img: asset("/subjects/drya-sheet.png"),
     status: "COMBINE",
     stats: [
       ["INFECTION", "18%"],
@@ -20,7 +21,7 @@ const subjects = [
   {
     name: "THOREAU",
     code: "SYS-7 // TAPE-03",
-    img: "/subjects/thoreau-sheet.png",
+    img: asset("/subjects/thoreau-sheet.png"),
     status: "OPERATIONAL",
     stats: [
       ["INFECTION", "31%"],

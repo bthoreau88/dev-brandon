@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { asset } from "@/lib/base";
 
 export function Dossier() {
   return (
@@ -15,7 +16,7 @@ export function Dossier() {
           className="hud-frame relative aspect-[16/10] overflow-hidden rounded-md"
         >
           <Image
-            src="/subjects/thoreau-portrait.png"
+            src={asset("/subjects/thoreau-portrait.png")}
             alt="OVS dossier"
             fill
             sizes="(max-width: 1024px) 100vw, 700px"
