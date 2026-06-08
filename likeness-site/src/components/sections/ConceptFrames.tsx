@@ -22,7 +22,7 @@ export function ConceptFrames() {
       <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
         <div>
           <span className="mono text-xs tracking-[0.4em] text-accent">
-            VOLUME 02 // CONCEPT BOARD
+            VOLUME 02 // FRAMES STILL TO SHOOT
           </span>
           <h2 className="mt-4 max-w-[18ch] text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl">
             Fifty-two shot orders. Not mood requests.
