@@ -6,10 +6,9 @@ import { ConceptTile } from "@/components/atmos/Atmos";
 
 const TILES = [
   { variant: "wake", label: "The Waking Frame — camcorder on carpet, 3:14 AM", code: "KEY · A·01" },
-  { variant: "study", label: "The Study — impossible room, window onto a wrong city", code: "ENV · C·08" },
+  { variant: "mirror", label: "The Mirror Lag — the reflection that hasn't caught up", code: "ALT · A·02" },
   { variant: "hallway", label: "Hallway — six doors where there were five", code: "RUPTURE · C·06" },
   { variant: "tape", label: "Tape 01 — Brandon, eight days prior, sepia-umber", code: "TAPE · E·01" },
-  { variant: "mirror", label: "The Mirror Lag — the reflection that hasn't caught up", code: "ALT · A·02" },
   { variant: "door", label: "The Choice — bedroom door, oxblood, 4:02 AM", code: "FINAL · A·05" },
 ] as const;
 

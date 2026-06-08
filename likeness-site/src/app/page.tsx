@@ -6,6 +6,7 @@ import { Dossier } from "@/components/sections/Dossier";
 import { Stills } from "@/components/sections/Stills";
 import { VisualDNA } from "@/components/sections/VisualDNA";
 import { SceneCards } from "@/components/sections/SceneCards";
+import { Apartment } from "@/components/sections/Apartment";
 import { ConceptFrames } from "@/components/sections/ConceptFrames";
 import { Systems } from "@/components/sections/Systems";
 import { Footer } from "@/components/sections/Footer";
@@ -24,6 +25,7 @@ export default function Home() {
         <Stills />
         <VisualDNA />
         <SceneCards />
+        <Apartment />
         <ConceptFrames />
         <Systems />
       </main>
