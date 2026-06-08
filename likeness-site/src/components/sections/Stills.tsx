@@ -6,6 +6,18 @@ import { asset } from "@/lib/base";
 
 const WIDES = [
   {
+    img: asset("/stills/thoreau-desk.png"),
+    code: "CHAR · THOREAU — THE STUDY",
+    title: "He never does",
+    note: "THOREAU at the desk, reading a page the room wrote. The face is the budget.",
+  },
+  {
+    img: asset("/stills/drya-close.png"),
+    code: "CHAR · DRYA — THRESHOLD",
+    title: "The witness",
+    note: "DRYA at the door of Room 14 — marked, composed, carrying the archive.",
+  },
+  {
     img: asset("/stills/drya-main-menu.png"),
     code: "UI · G·01 — MAIN MENU",
     title: "Channel 03 · New Game",
@@ -16,6 +28,12 @@ const WIDES = [
     code: "SYS · BIOMECH LOADOUT",
     title: "Biomechanical Customization",
     note: "Arm presets — recon, stealth, combat. The augment is the timer and the power.",
+  },
+  {
+    img: asset("/stills/drya-over-shoulder.png"),
+    code: "CHAR · DRYA — OVER-SHOULDER",
+    title: "Behind you, the door",
+    note: "Teal threshold bleeding from a room she didn't leave open.",
   },
   {
     img: asset("/stills/drya-corridor.png"),
@@ -49,9 +67,9 @@ export function Stills() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ type: "spring", stiffness: 85, damping: 20 }}
-          className="hud-frame group relative overflow-hidden rounded-md border border-white/10 lg:col-span-5 lg:row-span-2"
+          className="hud-frame group relative overflow-hidden rounded-md border border-white/10 lg:col-span-5"
         >
-          <div className="relative aspect-[3/4] w-full">
+          <div className="relative aspect-[3/4] w-full lg:h-full">
             <Image
               src={asset("/stills/likeness-tape003-poster.png")}
               alt="LIKENESS · TAPE 003 — key art, THOREAU and DRYA"
@@ -70,7 +88,8 @@ export function Stills() {
           </figcaption>
         </motion.figure>
 
-        {/* three wides */}
+        {/* wide stills */}
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:col-span-7">
         {WIDES.map((s, i) => (
           <motion.figure
             key={s.code}
@@ -83,7 +102,7 @@ export function Stills() {
               damping: 20,
               delay: i * 0.06,
             }}
-            className="hud-frame group relative overflow-hidden rounded-md border border-white/10 lg:col-span-7"
+            className="hud-frame group relative overflow-hidden rounded-md border border-white/10"
           >
             <div className="relative aspect-[16/9] w-full">
               <Image
@@ -108,6 +127,7 @@ export function Stills() {
             </figcaption>
           </motion.figure>
         ))}
+        </div>
       </div>
     </section>
   );
