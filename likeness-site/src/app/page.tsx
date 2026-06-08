@@ -3,6 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import { CinematicReveal } from "@/components/sections/CinematicReveal";
 import { InDevelopment } from "@/components/sections/InDevelopment";
 import { Subjects } from "@/components/sections/Subjects";
+import { IdentityLock } from "@/components/sections/IdentityLock";
 import { Dossier } from "@/components/sections/Dossier";
 import { Stills } from "@/components/sections/Stills";
 import { VisualDNA } from "@/components/sections/VisualDNA";
@@ -24,6 +25,7 @@ export default function Home() {
         </div>
         <InDevelopment />
         <Subjects />
+        <IdentityLock />
         <Dossier />
         <Stills />
         <VisualDNA />
