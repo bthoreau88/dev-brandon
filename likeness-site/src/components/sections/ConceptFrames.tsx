@@ -7,7 +7,7 @@ import { ConceptTile } from "@/components/atmos/Atmos";
 const TILES = [
   { variant: "hallway", label: "Hallway — six doors where there were five", code: "RUPTURE · C·06" },
   { variant: "tape", label: "Tape 01 — Brandon, eight days prior, sepia-umber", code: "TAPE · E·01" },
-  { variant: "door", label: "The Choice — bedroom door, oxblood, 4:02 AM", code: "FINAL · A·05" },
+  { variant: "mirror", label: "Mirror · no reflection — the body that isn't there", code: "RUPTURE · F·03" },
 ] as const;
 
 export function ConceptFrames() {

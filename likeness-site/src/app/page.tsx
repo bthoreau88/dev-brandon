@@ -10,8 +10,10 @@ import { VisualDNA } from "@/components/sections/VisualDNA";
 import { SceneCards } from "@/components/sections/SceneCards";
 import { Apartment } from "@/components/sections/Apartment";
 import { Motion } from "@/components/sections/Motion";
+import { RecoveredFootage } from "@/components/sections/RecoveredFootage";
 import { ConceptFrames } from "@/components/sections/ConceptFrames";
 import { Systems } from "@/components/sections/Systems";
+import { Choice } from "@/components/sections/Choice";
 import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
@@ -32,8 +34,10 @@ export default function Home() {
         <SceneCards />
         <Apartment />
         <Motion />
+        <RecoveredFootage />
         <ConceptFrames />
         <Systems />
+        <Choice />
       </main>
       <Footer />
     </>
