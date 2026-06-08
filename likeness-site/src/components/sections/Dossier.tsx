@@ -24,7 +24,7 @@ export function Dossier() {
           />
           <div className="absolute inset-0 bg-gradient-to-r from-background/40 to-transparent" />
           <span className="mono absolute left-5 top-5 text-[10px] tracking-[0.3em] text-teal">
-            OVS // DOSSIER · SYS-7
+            OVS // DOSSIER · TAPE-03
           </span>
         </motion.div>
 
@@ -38,19 +38,20 @@ export function Dossier() {
             THE PREMISE
           </span>
           <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight md:text-5xl">
-            OVS doesn&apos;t recruit. It overwrites.
+            The room remembers what you forgot.
           </h2>
           <p className="mt-5 max-w-[52ch] text-sm leading-relaxed text-muted md:text-base">
-            Tape-03 logs the intake of SYS-7 — subjects fitted with biomech and
-            seeded with a borrowed likeness. Each face carries a debt. Wear it
-            well and you inherit its access, its allies, its enemies. Wear it too
-            long and the host underneath goes quiet for good.
+            TAPE-03 is a single-location psychological thriller about identity,
+            memory, and the doppelgänger you can almost trust. A man wakes with a
+            head wound, a camcorder on the floor, and no memory of the last
+            forty-eight hours. Three labeled tapes explain what happened. The
+            apartment is wrong in small ways. Someone with his voice is inside.
           </p>
           <ul className="mt-8 space-y-3">
             {[
-              ["INTAKE", "A subject is fitted, seeded, and assigned a face."],
-              ["SYNC", "Biomech binds. Infection rate climbs. Identity blurs."],
-              ["COMBINE", "Host and likeness merge. Only OVS remains."],
+              ["WAKE", "3:14 AM. A wound, a camcorder, and three tapes you don't remember making."],
+              ["RECONSTRUCT", "The rooms rearrange when you look away. Evidence, not explanation."],
+              ["CHOOSE", "Two endings, both ambiguous. The room keeps the half you edited out."],
             ].map(([k, v]) => (
               <li key={k} className="flex items-start gap-4">
                 <span className="mono mt-0.5 w-20 shrink-0 text-[10px] tracking-[0.2em] text-teal">

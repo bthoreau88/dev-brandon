@@ -6,14 +6,14 @@ import { asset } from "@/lib/base";
 const subjects = [
   {
     name: "DRYA",
-    tag: "SYS-7 // TAPE #1",
-    status: "COMBINE",
+    tag: "THE ROOM TESTIFIES",
+    status: "THE WITNESS",
     img: asset("/subjects/drya-select.png"),
   },
   {
     name: "THOREAU",
-    tag: "SYS-7 // TAPE-03",
-    status: "OPERATIONAL",
+    tag: "TAPE-03",
+    status: "THE HOST",
     img: asset("/subjects/thoreau-portrait.png"),
   },
 ];
@@ -36,45 +36,46 @@ export function Hero() {
       {/* top HUD strip */}
       <div className="relative z-10 mx-auto mt-28 flex w-full max-w-[1400px] items-center justify-between px-6 md:px-8">
         <span className="mono text-[10px] tracking-[0.4em] text-teal">
-          OVS // ARCHIVE SYS-7
+          OVS // LIKENESS · TAPE 03
         </span>
         <span className="mono text-[10px] tracking-[0.4em] text-muted">
-          INFECTION RATE <span className="text-accent">18%</span>
+          THE ROOM <span className="text-accent">REMEMBERS</span>
         </span>
       </div>
 
       {/* title block */}
       <div className="relative z-10 mx-auto w-full max-w-[1400px] px-6 md:px-8">
         <span className="mono text-xs tracking-[0.45em] text-accent">
-          TAPE-03 // SUBJECT LIKENESS PROTOCOL
+          A PSYCHOLOGICAL CHAMBER HORROR
         </span>
         <h1 className="glow-accent mt-4 text-[20vw] font-extrabold leading-[0.82] tracking-tighter md:text-[13vw]">
           LIKENESS
         </h1>
-        <p className="mt-5 max-w-[42ch] text-balance text-sm text-muted md:text-base">
-          In OVS, identity is the only currency that survives. Wear a face long
-          enough and the host underneath forgets it was ever theirs.
+        <p className="mt-5 max-w-[44ch] text-balance text-sm text-muted md:text-base">
+          A man wakes with a wound he can&apos;t explain, three tapes, and a
+          voice in the next room that is his own. Identity, memory, and the
+          doppelgänger you can almost trust.
         </p>
         <div className="mt-8 flex flex-wrap items-center gap-3">
           <a
-            href="#intake"
+            href="#subjects"
             className="mono rounded-sm bg-accent px-7 py-3 text-xs font-semibold tracking-[0.15em] text-black uppercase transition-transform hover:scale-105"
           >
-            Enter OVS
+            Meet the two
           </a>
           <a
-            href="#subjects"
+            href="#stills"
             className="mono glass rounded-sm px-7 py-3 text-xs font-semibold tracking-[0.15em] uppercase transition-colors hover:text-teal"
           >
-            View Subjects
+            View Stills
           </a>
         </div>
       </div>
 
-      {/* character-select rail */}
+      {/* character rail */}
       <div className="relative z-10 mx-auto mb-10 w-full max-w-[1400px] px-6 md:px-8">
         <span className="mono mb-3 block text-[10px] tracking-[0.4em] text-muted">
-          SELECT SUBJECT
+          THE CHARACTERS
         </span>
         <div className="flex gap-3">
           {subjects.map((s) => (

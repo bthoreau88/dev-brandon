@@ -4,23 +4,23 @@ import { motion } from "framer-motion";
 
 const features = [
   {
-    title: "Likeness Intake",
-    body: "Receive a face from the OVS archive — skin, voiceprint, biometrics. It is not a disguise. It is an overwrite.",
+    title: "The room is the antagonist",
+    body: "No combat. No monster to fight. The apartment rearranges when you look away, withholds, and returns objects in the wrong order. The horror is geographical.",
     span: "md:col-span-2",
   },
   {
-    title: "Biomech Sync",
-    body: "Augments bind in real time. Infection rate is your timer — and your power.",
+    title: "Tape as mechanic",
+    body: "Three VHS tapes are the only witnesses. Scrub, rewind, and cross-reference what you said before you forgot it.",
     span: "",
   },
   {
-    title: "Infection Spread",
-    body: "Every face carries debts. Inherit its access, its allies, its enemies.",
+    title: "No HUD. Only blackouts",
+    body: "Diegetic everything — the menu is a CRT, pause is an ejected tape. No restart screen, only the gaps in your memory.",
     span: "",
   },
   {
-    title: "OVS Oversight",
-    body: "The system watches every subject. Hold your likeness or get flagged for combine.",
+    title: "Two endings. Both true",
+    body: "Evidence, not explanation. You finish carrying a question, not an answer — and neither ending lets the room off the hook.",
     span: "md:col-span-2",
   },
 ];
@@ -54,13 +54,13 @@ export function Systems() {
           variants={item}
           className="font-mono text-xs tracking-[0.4em] text-accent"
         >
-          OVS // PROTOCOLS
+          OVS // WHAT THE GAME IS
         </motion.span>
         <motion.h2
           variants={item}
           className="mt-4 max-w-[20ch] text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl"
         >
-          A system built to overwrite.
+          A chamber horror that haunts, not answers.
         </motion.h2>
 
         <div className="mt-14 grid grid-cols-1 gap-4 md:grid-cols-3">

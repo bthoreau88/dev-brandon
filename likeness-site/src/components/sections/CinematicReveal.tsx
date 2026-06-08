@@ -147,9 +147,8 @@ export function CinematicReveal() {
   return (
     <section ref={sectionRef} className="scroll-animation relative">
       <div className="grain sticky top-0 h-screen overflow-hidden bg-background">
-        {/* NOTE: placeholder footage, graded to the OVS look. Replace
-            /public/frames2 with a DRYA / THOREAU turntable or biomech-sync clip
-            (see README) and the grade can be eased back. */}
+        {/* NOTE: graded to the OVS look. Swap /public/frames2 with a DRYA /
+            THOREAU turntable or a Room-14 push-in and the grade can ease back. */}
         <canvas
           ref={canvasRef}
           className="block h-full w-full"
@@ -203,16 +202,16 @@ export function CinematicReveal() {
           className="absolute inset-0 flex flex-col items-center justify-center px-6 text-center opacity-0 transition-opacity duration-500"
         >
           <span className="mono mb-3 text-xs tracking-[0.4em] text-teal">
-            SUBJECT STATUS
+            EVIDENCE · NOT EXPLANATION
           </span>
           <h2 className="glow-accent text-5xl font-extrabold tracking-tight md:text-7xl">
-            COMBINE.
+            THE RECORD REMAINS.
           </h2>
           <a
-            href="#intake"
+            href="#subjects"
             className="mono mt-8 rounded-sm bg-accent px-8 py-3 text-xs font-semibold tracking-[0.15em] text-black uppercase transition-transform hover:scale-105"
           >
-            Request Intake
+            Meet the two
           </a>
         </div>
 
@@ -220,7 +219,7 @@ export function CinematicReveal() {
         <div className="pointer-events-none absolute bottom-6 left-0 right-0 px-6 md:px-16">
           <div className="mb-2 flex items-center justify-between font-mono text-[10px] tracking-[0.25em] text-muted">
             <span ref={seqRef}>SEQ 001 / {CINE.count}</span>
-            <span>OVS BIOMECH ENGINE · LIVE</span>
+            <span>OVS ARCHIVE · THE ROOM REMEMBERS</span>
           </div>
           <div className="h-px w-full bg-white/10">
             <div

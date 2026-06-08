@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "LIKENESS // OVS — TAPE-03",
   description:
-    "In OVS, identity is the only currency that survives. LIKENESS is a gritty sci-fi game where a borrowed face overwrites the host beneath it. Subjects: DRYA, THOREAU.",
+    "LIKENESS · TAPE 03 — a psychological chamber horror about identity, memory, and the doppelgänger you can almost trust. A man wakes with a wound, three tapes, and a voice in the next room that is his own. Omnia Vanitas Studios. Characters: THOREAU, DRYA.",
 };
 
 export default function RootLayout({

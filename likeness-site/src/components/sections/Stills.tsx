@@ -21,13 +21,13 @@ const WIDES = [
     img: asset("/stills/drya-main-menu.png"),
     code: "UI · G·01 — MAIN MENU",
     title: "Channel 03 · New Game",
-    note: "Diegetic menu. DRYA at intake, biomech bound, the OVS lab behind glass.",
+    note: "Diegetic menu. DRYA at the threshold, the OVS lab held behind glass.",
   },
   {
     img: asset("/stills/drya-customization.png"),
-    code: "SYS · BIOMECH LOADOUT",
-    title: "Biomechanical Customization",
-    note: "Arm presets — recon, stealth, combat. The augment is the timer and the power.",
+    code: "SYS · LOADOUT",
+    title: "Configuration",
+    note: "DRYA sets her approach before she descends — recon, quiet, or force. Each is a different way through Room 14.",
   },
   {
     img: asset("/stills/drya-over-shoulder.png"),

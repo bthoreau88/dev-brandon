@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/ui/Navbar";
 import { Hero } from "@/components/sections/Hero";
 import { CinematicReveal } from "@/components/sections/CinematicReveal";
+import { InDevelopment } from "@/components/sections/InDevelopment";
 import { Subjects } from "@/components/sections/Subjects";
 import { Dossier } from "@/components/sections/Dossier";
 import { Stills } from "@/components/sections/Stills";
@@ -21,6 +22,7 @@ export default function Home() {
         <div id="reveal">
           <CinematicReveal />
         </div>
+        <InDevelopment />
         <Subjects />
         <Dossier />
         <Stills />

@@ -7,29 +7,29 @@ import { asset } from "@/lib/base";
 const subjects = [
   {
     name: "DRYA",
-    code: "SYS-7 // TAPE #1",
+    code: "THE ROOM TESTIFIES",
     img: asset("/subjects/drya-sheet.png"),
-    status: "COMBINE",
+    status: "THE WITNESS",
     stats: [
-      ["INFECTION", "18%"],
-      ["STATUS", "COMBINE"],
-      ["AUGMENT", "BIOMECH L-ARM"],
-      ["CLEARANCE", "SYS-7"],
+      ["ROLE", "WITNESS · CONDUIT"],
+      ["STATE", "TESTIMONY, NOT GRIEF"],
+      ["CARRIES", "THE ARCHIVE · ROOM 14"],
+      ["REFUSES", "THE HANDLED VERSION"],
     ],
-    note: "Host signal faint. Likeness dominant. Subject answers to the eye.",
+    note: "She enters Room 14 looking for a ghost and finds a record. She stops asking what happened — and takes the record back.",
   },
   {
     name: "THOREAU",
-    code: "SYS-7 // TAPE-03",
+    code: "TAPE-03 // PROTAGONIST",
     img: asset("/subjects/thoreau-sheet.png"),
-    status: "OPERATIONAL",
+    status: "THE HOST",
     stats: [
-      ["INFECTION", "31%"],
-      ["STATUS", "OPERATIONAL"],
-      ["AUGMENT", "DUAL EXO-ARMS"],
-      ["CLEARANCE", "SYS-7"],
+      ["ROLE", "PROTAGONIST · THE HOST"],
+      ["STATE", "NO MEMORY OF 48 HRS"],
+      ["EVIDENCE", "3 TAPES · 1 WOUND"],
+      ["THE OTHER", "A VOICE THAT IS HIS"],
     ],
-    note: "Resisting integration. High biomech load. Flagged for oversight.",
+    note: "Wakes at 3:14 AM to an apartment arranged wrong. Someone with his face is already inside, and the tapes know more than he does.",
   },
 ];
 
@@ -49,10 +49,10 @@ export function Subjects() {
       className="relative mx-auto max-w-[1400px] px-6 py-24 md:px-8 md:py-32"
     >
       <span className="mono text-xs tracking-[0.4em] text-accent">
-        OVS // SUBJECT ARCHIVE
+        OVS // CHARACTER BIBLE
       </span>
       <h2 className="mt-4 max-w-[16ch] text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl">
-        Select your subject.
+        Two faces. One record.
       </h2>
 
       <div className="mt-14 grid grid-cols-1 gap-5 lg:grid-cols-2">
