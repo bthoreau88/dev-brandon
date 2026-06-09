@@ -4,12 +4,17 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { asset } from "@/lib/base";
 
-// Portrait key-art + evidence.
+// Portrait key-art + field.
 const POSTERS = [
   {
-    img: asset("/stills/likeness-tape003-poster.png"),
-    code: "KEY ART · A·00 — THE TITLE",
+    img: asset("/stills/poster-room14.png"),
+    code: "KEY ART · A·00 — ROOM 14",
     title: "LIKENESS · TAPE 003",
+  },
+  {
+    img: asset("/stills/likeness-tape003-poster.png"),
+    code: "KEY ART · THE TITLE",
+    title: "Thoreau & Drya",
   },
   {
     img: asset("/stills/ovs-poster.png"),
@@ -17,9 +22,9 @@ const POSTERS = [
     title: "End of the hallway",
   },
   {
-    img: asset("/stills/three-tapes.png"),
-    code: "EVIDENCE · A·03 — THREE TAPES",
-    title: "01 · 02 · 03",
+    img: asset("/stills/drya-atrium.png"),
+    code: "LOOP · CONTAIN THE RESONANCE",
+    title: "The Room 14 atrium",
   },
 ];
 
@@ -116,8 +121,8 @@ export function Stills() {
         is the budget; every still holds the lock.
       </p>
 
-      {/* key art + evidence */}
-      <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-3">
+      {/* key art + field */}
+      <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
         {POSTERS.map((p, i) => (
           <motion.figure
             key={p.code}

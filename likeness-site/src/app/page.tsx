@@ -9,6 +9,7 @@ import { Stills } from "@/components/sections/Stills";
 import { VisualDNA } from "@/components/sections/VisualDNA";
 import { SceneCards } from "@/components/sections/SceneCards";
 import { Apartment } from "@/components/sections/Apartment";
+import { Evidence } from "@/components/sections/Evidence";
 import { Motion } from "@/components/sections/Motion";
 import { RecoveredFootage } from "@/components/sections/RecoveredFootage";
 import { ConceptFrames } from "@/components/sections/ConceptFrames";
@@ -33,6 +34,7 @@ export default function Home() {
         <VisualDNA />
         <SceneCards />
         <Apartment />
+        <Evidence />
         <Motion />
         <RecoveredFootage />
         <ConceptFrames />

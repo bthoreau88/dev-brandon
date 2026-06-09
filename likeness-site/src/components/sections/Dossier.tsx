@@ -16,8 +16,8 @@ export function Dossier() {
           className="hud-frame relative aspect-[16/10] overflow-hidden rounded-md"
         >
           <Image
-            src={asset("/subjects/thoreau-portrait.png")}
-            alt="OVS dossier"
+            src={asset("/stills/thoreau-portrait-clean.png")}
+            alt="THOREAU — identity reference"
             fill
             sizes="(max-width: 1024px) 100vw, 700px"
             className="object-cover"

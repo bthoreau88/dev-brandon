@@ -6,28 +6,52 @@ import { asset } from "@/lib/base";
 
 const ENV = [
   {
-    img: asset("/stills/apt-study-desk.png"),
+    img: asset("/stills/living-room.png"),
+    code: "ENV · C·01 — LIVING ROOM",
+    title: "3:14 AM Establish",
+    note: "The couch, the coffee table, three tapes, and a CRT humming static in the corner.",
+  },
+  {
+    img: asset("/stills/bathroom.png"),
+    code: "ENV · C·03 — BATHROOM",
+    title: "Fluorescent Ring",
+    note: "Off-white tile, a vintage mirror, a faucet that drips. Where the reflection lags.",
+  },
+  {
+    img: asset("/stills/office.png"),
+    code: "ENV · C·04 — OFFICE",
+    title: "Laptop as Light",
+    note: "A locked drawer with a brass keyhole. The screen the only thing awake in the room.",
+  },
+  {
+    img: asset("/stills/study-window.png"),
     code: "ENV · C·08 — THE STUDY",
+    title: "Window Onto the Wrong City",
+    note: "The only room lit without a visible source. The typewriter page rewrites itself between visits.",
+  },
+  {
+    img: asset("/stills/bedroom.png"),
+    code: "ENV · C·07 — BEDROOM",
+    title: "Climax Space",
+    note: "A camcorder on the dresser, red REC light on, lens pointed at the door. Reserved palette.",
+  },
+  {
+    img: asset("/stills/wall-of-photos.png"),
+    code: "ENV · D·05 — WALL OF PHOTOS",
+    title: "Frames That Empty",
+    note: "Family photographs in mismatched wood. Turn your back and the frames go blank.",
+  },
+  {
+    img: asset("/stills/apt-study-desk.png"),
+    code: "ENV · THE STUDY · OCCUPIED",
     title: "The Impossible Room",
-    note: "Walls that don't meet at right angles. A window onto a city Brandon never lived in.",
+    note: "Walls that don't meet at right angles. Furniture at 95% scale, the same wrongness twice.",
   },
   {
     img: asset("/stills/apt-investigate-crt.png"),
     code: "LOOP · INVESTIGATE THE APARTMENT",
     title: "The Room Watches Back",
     note: "The CRT plays surveillance of the pair — footage from a camera no one set up.",
-  },
-  {
-    img: asset("/stills/apt-photo-wall.png"),
-    code: "EVID · D·05 / F·04 — PHOTO WALL",
-    title: "Frames That Empty",
-    note: "Family photographs in mismatched wood. Turn your back and the frames go blank.",
-  },
-  {
-    img: asset("/stills/apt-study-wide.png"),
-    code: "ENV · THE STUDY · WIDE",
-    title: "No Visible Source",
-    note: "The only room lit without a lamp. The typewriter page rewrites itself between visits.",
   },
 ];
 
@@ -82,7 +106,7 @@ export function Apartment() {
       </motion.figure>
 
       {/* Environment grid */}
-      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {ENV.map((s, i) => (
           <motion.figure
             key={s.code}
