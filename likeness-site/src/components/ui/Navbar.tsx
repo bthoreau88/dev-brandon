@@ -10,6 +10,7 @@ const anchors = [
 ];
 
 const routes = [
+  { label: "Universe", href: "/universe" },
   { label: "Room Testifies", href: "/room-testifies" },
   { label: "Prompts", href: "/prompts" },
 ];

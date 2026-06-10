@@ -110,3 +110,14 @@ body {
 ::selection {
   background: rgba(224, 83, 31, 0.35);
 }
+
+/* ---- Universe hero: typewriter cursor blink ---- */
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
