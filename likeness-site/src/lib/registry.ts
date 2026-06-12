@@ -207,7 +207,91 @@ export const ROUTES: Route[] = [
   { route: "/characters", label: "Characters", fn: "Identity cards and doubles.", live: true },
   { route: "/evidence", label: "Evidence", fn: "The inspectable object timeline.", live: true },
   { route: "/tapes", label: "Tapes", fn: "Tape archive and unlock state.", live: true },
-  { route: "/motel", label: "Motel Map", fn: "Interactive Dellwood map and hidden rooms.", live: false },
+  { route: "/motel", label: "Motel Map", fn: "Interactive Dellwood map and hidden rooms.", live: true },
+  { route: "/devlog", label: "Devlog", fn: "Production notes and expansion modules.", live: true },
   { route: "/room-14", label: "Room 14", fn: "Explorable 3D chamber with inspectable objects.", live: false },
-  { route: "/devlog", label: "Devlog", fn: "Production notes from build sessions.", live: false },
+];
+
+// ---- Expansion modules (expansion_registry.csv · V002) ----
+export type Expansion = {
+  id: string;
+  name: string;
+  category: string;
+  use: string;
+  status: string;
+  gate: string;
+};
+
+export const EXPANSIONS: Expansion[] = [
+  {
+    id: "EXP_IMAGE_BLASTER",
+    name: "Image-Blaster",
+    category: "image-to-world",
+    use: "Rapid environment prototypes — meshes, splats, ambience from a single image.",
+    status: "OPTIONAL",
+    gate: "Story fit · collision · scale · performance · source note.",
+  },
+  {
+    id: "EXP_NANOGS",
+    name: "Nano Gaussian Splatting",
+    category: "unreal rendering",
+    use: "Large splat-rendering pilot for captured / generated static environments in UE5.",
+    status: "TECHNICAL PILOT",
+    gate: "UE compatibility · FPS · VRAM · ghosting · collision mesh.",
+  },
+  {
+    id: "EXP_HIGGSFIELD",
+    name: "Higgsfield Claude Skills",
+    category: "campaign / reference",
+    use: "Social hooks, motion reference, fashion lookbook, music-video prompt workflows.",
+    status: "MARKETING / REF",
+    gate: "OVS visual DNA · identity lock · confirmation before generation.",
+  },
+  {
+    id: "EXP_UE_GUIDE",
+    name: "Unreal Engine Guide",
+    category: "learning / reference",
+    use: "UE checklist, study roadmap, and feature mapping for production problems.",
+    status: "REFERENCE ONLY",
+    gate: "Must solve a named LIKENESS production problem.",
+  },
+];
+
+// ---- Devlog — real build sessions on this companion site ----
+export type LogEntry = { tag: string; title: string; body: string };
+
+export const DEVLOG: LogEntry[] = [
+  {
+    tag: "COMPANION",
+    title: "Data-driven routes online",
+    body: "Characters, Evidence, Tapes, and the Motel Map now read from the shared registry (src/lib/registry.ts), mirroring the game's CSV registries. Matching IDs across site and game; content expands without losing identity.",
+  },
+  {
+    tag: "CANON",
+    title: "Recharacterized to the LIKENESS world",
+    body: "Stripped the generic sci-fi framing; rebuilt the front-of-site around THOREAU, DRYA, the double, the tapes, and the room that testifies. Visual DNA, color matrix, camera law, and the eight-beat architecture are all on the page.",
+  },
+  {
+    tag: "ARCHIVE",
+    title: "Real captures placed",
+    body: "~35 in-engine frames threaded into Captured, the Apartment room tour, Identity Lock sheets, Recovered Footage, Evidence macros, the Choice closing band, and two motion clips. Authored atmosphere fills the frames still to shoot.",
+  },
+  {
+    tag: "ENTRY",
+    title: "Universe landing built",
+    body: "A full-screen, mouse-scrub video entry (move to scrub the room), typewriter archive interface, and pill navigation — recustomized from the Mainframe interaction spec into the OVS dark cinematic system.",
+  },
+  {
+    tag: "EXPANSION",
+    title: "V002 modules registered",
+    body: "Image-Blaster, NanoGS, Higgsfield, and the UE Guide logged as optional accelerators. Per the Expansion Law: they prototype, enrich, test, and market — they do not replace the authored story or the locked identities.",
+  },
+];
+
+// ---- Phase build plan (§ 14) ----
+export const PHASES: { n: string; action: string; done: boolean }[] = [
+  { n: "0", action: "Preflight repo, docs, registries, web foundation", done: true },
+  { n: "1", action: "Lock vertical-slice scope and task board", done: false },
+  { n: "9", action: "Three.js companion alpha — routes load from shared JSON", done: true },
+  { n: "10", action: "Lock the vertical slice — build, QA, captures, handoff", done: false },
 ];

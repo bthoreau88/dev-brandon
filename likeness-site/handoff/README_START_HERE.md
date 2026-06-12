@@ -25,3 +25,14 @@ Start here. This package defines the production workflow, folder structure, regi
 - Reusable templates for characters, environments, mechanics, story, QA, and style.
 - Agent handoff prompts for Claude Code, Codex, and Fable/Three.js style web building.
 - CSV registries for assets, characters, mechanics, levels, prompts, and narrative beats.
+
+
+## V002 Expansion Addendum
+
+This package now includes optional expansion modules for:
+- Image-Blaster image-to-world staging.
+- Nano Gaussian Splatting Unreal splat tests.
+- Higgsfield / Seedance campaign and reference workflows.
+- Unreal Engine Guide learning/checklist support.
+
+Start with `docs/12_Expansion_Source_Matrix.md`, then `docs/12_Expansion_Workflow_Modules.md`. These modules enhance the project; they do not replace the existing LIKENESS pipeline.

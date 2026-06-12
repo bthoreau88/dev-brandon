@@ -60,3 +60,15 @@
 - [ ] QA pass.
 - [ ] Export package.
 - [ ] Final handoff notes.
+
+
+## V002 Expansion Tasks
+
+| ID | Task | Owner | Status | Gate |
+|---|---|---|---|---|
+| EXP-001 | Read expansion matrix and confirm optional-module boundaries | Human/Agent | Ready | No installs. |
+| EXP-002 | Create prompt-only Higgsfield OVS campaign pack | Agent | Ready | No external generation without confirmation. |
+| EXP-003 | Stage one Image-Blaster test from approved Dellwood image | Agent | Waiting | Requires approved input + API keys. |
+| EXP-004 | Create NanoGS test branch and plugin install checklist | Agent | Waiting | Requires UE project path and build environment. |
+| EXP-005 | Convert Unreal Engine Guide topics into weekly study sprints | Agent | Ready | Reference only. |
+| EXP-006 | Add expansion QC report template to build_notes | Agent | Ready | Must cite source and approval status. |
