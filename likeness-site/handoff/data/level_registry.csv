@@ -1,0 +1,4 @@
+level_id,name,status,unreal_map,web_route,story_function,required_mechanics
+LOC_DELLWOOD_ROOM14_001,Room 14,IDEA,L_Dellwood_Room14,/room-14,"Primary chamber, argument loop, identity fracture",MECH_INSPECT_001;MECH_MIRROR_LAG_001;MECH_ROOM_STATE_001
+LOC_DELLWOOD_HALLWAY_001,Dellwood Hallway,IDEA,L_Dellwood_Hallway,/motel,"Threshold, repetition, impossible doors",MECH_ROOM_STATE_001
+LOC_DELLWOOD_OFFICE_001,Front Office,IDEA,L_Dellwood_Office,/motel/front-office,"Ledger, key exchange, arrival ritual",MECH_INSPECT_001

@@ -1,0 +1,4 @@
+character_id,name,role,status,identity_lock,reference_folder,model_folder,qc_notes
+CHR_THOREAU_001,THOREAU,Player / witness,REF_IN_PROGRESS,"Black man early 30s, medium-deep warm brown skin, round gold glasses, mustache and goatee, guarded presence",,,Strict identity lock required
+CHR_DRYA_001,DRYA,Counterpart / memory anchor,REF_IN_PROGRESS,"Black woman late 20s, warm medium-brown skin, dancer body language, jewelry/piercing details, guarded emotional presence",,,No generic glamour drift
+CHR_DARK_THOREAU_001,DARK THOREAU,Double,IDEA,Same identity as THOREAU with wrong timing/posture/gaze only,,,No gore-first design

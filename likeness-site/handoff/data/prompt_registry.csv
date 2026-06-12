@@ -1,0 +1,4 @@
+prompt_id,purpose,target,status,source_doc,notes
+PROMPT_CHR_4STEP_001,4-step character reference,Character refs,READY,docs/03_Character_Reference_4Step_Template.md,Use before 3D conversion
+PROMPT_AGENT_HANDOFF_001,Agent development handoff,Claude/Codex,READY,docs/09_Agent_Handoff_Prompt_Block.md,Start all agent sessions here
+PROMPT_WEB_3D_001,Three.js web companion,Fable/Claude/Codex,READY,docs/10_ThreeJS_Fable_Web_Handoff.md,Shared visual thread with game

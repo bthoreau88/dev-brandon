@@ -1,0 +1,4 @@
+beat_id,name,status,location_id,characters,trigger,resulting_room_state,web_unlock
+BEAT_ARRIVAL_001,Arrival at Room 14,IDEA,LOC_DELLWOOD_ROOM14_001,CHR_THOREAU_001,Player enters room,STATE_00_NORMAL,/evidence/key-14
+BEAT_MIRROR_LAG_001,The Mirror Answers Late,IDEA,LOC_DELLWOOD_ROOM14_001,CHR_THOREAU_001;CHR_DARK_THOREAU_001,Inspect bathroom mirror,STATE_02_MIRROR_LAG,/tapes/mirror-lag
+BEAT_TAPE_CONTRADICTION_001,Tape Contradiction,IDEA,LOC_DELLWOOD_ROOM14_001,CHR_THOREAU_001;CHR_DRYA_001,Play tape,STATE_04_TAPE_CONTRADICTION,/tapes/tape-03

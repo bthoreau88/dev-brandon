@@ -1,0 +1,43 @@
+{
+  "package": "LIKENESS_THE_GAME_OVS_HANDOFF_V001",
+  "created": "2026-06-12",
+  "project": "LIKENESS : THE GAME",
+  "documents": [
+    "README_START_HERE.md",
+    "docs/00_OVS_Production_Workflow.md",
+    "docs/01_Project_Foundation_Template.md",
+    "docs/02_Game_Design_Template.md",
+    "docs/03_Character_Reference_4Step_Template.md",
+    "docs/04_Environment_And_Level_Template.md",
+    "docs/05_Mechanics_Template.md",
+    "docs/06_Narrative_Template.md",
+    "docs/07_Art_Direction_Style_Bible.md",
+    "docs/08_QA_QC_Checklists.md",
+    "docs/09_Agent_Handoff_Prompt_Block.md",
+    "docs/10_ThreeJS_Fable_Web_Handoff.md",
+    "docs/11_Unreal_Claude_Setup.md",
+    "agents/AGENTS.md",
+    "agents/CLAUDE.md",
+    "agents/CODEX.md",
+    "agents/FABLE_THREEJS_PROMPT.md",
+    "agents/TASK_BOARD.md"
+  ],
+  "registries": [
+    "data/asset_manifest.csv",
+    "data/character_registry.csv",
+    "data/mechanics_registry.csv",
+    "data/level_registry.csv",
+    "data/prompt_registry.csv",
+    "data/narrative_beats.csv"
+  ],
+  "pipeline": [
+    "Ideation",
+    "Clean Sheet",
+    "Parts",
+    "Views",
+    "Unreal Vertical Slice",
+    "Three.js Companion",
+    "QA",
+    "Handoff"
+  ]
+}

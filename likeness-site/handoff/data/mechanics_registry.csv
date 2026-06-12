@@ -1,0 +1,4 @@
+mechanic_id,name,status,unreal_class,web_component,description,qa_notes
+MECH_INSPECT_001,Inspectable Object,IDEA,BP_OVS_InspectableObject,InspectableObject.tsx,Player examines props and unlocks memory fragments,Must be data-driven
+MECH_MIRROR_LAG_001,Mirror Lag,IDEA,BP_OVS_MirrorLagController,MirrorLagScene.tsx,Reflection or mirror state contradicts player timing,No cheap jump scare dependency
+MECH_ROOM_STATE_001,Room State Controller,IDEA,BP_OVS_RoomStateController,roomStateStore.ts,"Changes lighting, props, audio, interaction availability",Core expandable system

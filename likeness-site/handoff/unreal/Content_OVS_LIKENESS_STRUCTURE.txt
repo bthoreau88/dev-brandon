@@ -1,0 +1,12 @@
+Content/OVS_LIKENESS/
+  00_Core/
+  01_Characters/
+  02_Environments/
+  03_Props/
+  04_Materials/
+  05_Blueprints/
+  06_UI/
+  07_Audio/
+  08_Cinematics/
+  09_Data/
+  10_Art_Staging/

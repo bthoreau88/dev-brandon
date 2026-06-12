@@ -1,0 +1,15 @@
+src/
+  app/
+  components/
+  data/
+  scenes/
+    Room14Scene.tsx
+    MotelMapScene.tsx
+  stores/
+  styles/
+  routes/
+public/assets/
+  models/
+  textures/
+  splats/
+  audio/

@@ -1,0 +1,4 @@
+asset_id,type,name,status,source,owner,engine_path,web_path,dependencies,qc_notes
+PROP_KEY14_001,prop,Brass Motel Key 14,IDEA,,Brandon,,,LOC_DELLWOOD_ROOM14_001,"Must read as old brass, not shiny gold"
+PROP_LOCKET_001,prop,Locket Tintype,IDEA,,Brandon,,,BEAT_ARGUMENT_RESIDUE_001,High detail close inspect asset
+LOC_DELLWOOD_ROOM14_001,environment,The Dellwood Room 14,IDEA,,Brandon,,,MECH_INSPECT_001,Primary chamber space
