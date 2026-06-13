@@ -209,7 +209,7 @@ export const ROUTES: Route[] = [
   { route: "/tapes", label: "Tapes", fn: "Tape archive and unlock state.", live: true },
   { route: "/motel", label: "Motel Map", fn: "Interactive Dellwood map and hidden rooms.", live: true },
   { route: "/devlog", label: "Devlog", fn: "Production notes and expansion modules.", live: true },
-  { route: "/room-14", label: "Room 14", fn: "Explorable 3D chamber with inspectable objects.", live: false },
+  { route: "/room-14", label: "Room 14", fn: "Explorable 3D chamber with inspectable objects.", live: true },
 ];
 
 // ---- Expansion modules (expansion_registry.csv · V002) ----
