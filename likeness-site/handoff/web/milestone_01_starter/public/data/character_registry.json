@@ -1,0 +1,32 @@
+[
+  {
+    "character_id": "CHR_THOREAU_001",
+    "name": "THOREAU",
+    "role": "Player / witness",
+    "status": "REF_IN_PROGRESS",
+    "identity_lock": "Black man early 30s, medium-deep warm brown skin, round gold glasses, mustache and goatee, guarded presence",
+    "reference_folder": "",
+    "model_folder": "",
+    "qc_notes": "Strict identity lock required"
+  },
+  {
+    "character_id": "CHR_DRYA_001",
+    "name": "DRYA",
+    "role": "Counterpart / memory anchor",
+    "status": "REF_IN_PROGRESS",
+    "identity_lock": "Black woman late 20s, warm medium-brown skin, dancer body language, jewelry/piercing details, guarded emotional presence",
+    "reference_folder": "",
+    "model_folder": "",
+    "qc_notes": "No generic glamour drift"
+  },
+  {
+    "character_id": "CHR_DARK_THOREAU_001",
+    "name": "DARK THOREAU",
+    "role": "Double",
+    "status": "IDEA",
+    "identity_lock": "Same identity as THOREAU with wrong timing/posture/gaze only",
+    "reference_folder": "",
+    "model_folder": "",
+    "qc_notes": "No gore-first design"
+  }
+]

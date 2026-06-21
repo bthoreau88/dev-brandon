@@ -1,0 +1,38 @@
+[
+  {
+    "asset_id": "PROP_KEY14_001",
+    "type": "prop",
+    "name": "Brass Motel Key 14",
+    "status": "IDEA",
+    "source": "",
+    "owner": "Brandon",
+    "engine_path": "",
+    "web_path": "",
+    "dependencies": "LOC_DELLWOOD_ROOM14_001",
+    "qc_notes": "Must read as old brass, not shiny gold"
+  },
+  {
+    "asset_id": "PROP_LOCKET_001",
+    "type": "prop",
+    "name": "Locket Tintype",
+    "status": "IDEA",
+    "source": "",
+    "owner": "Brandon",
+    "engine_path": "",
+    "web_path": "",
+    "dependencies": "BEAT_ARGUMENT_RESIDUE_001",
+    "qc_notes": "High detail close inspect asset"
+  },
+  {
+    "asset_id": "LOC_DELLWOOD_ROOM14_001",
+    "type": "environment",
+    "name": "The Dellwood Room 14",
+    "status": "IDEA",
+    "source": "",
+    "owner": "Brandon",
+    "engine_path": "",
+    "web_path": "",
+    "dependencies": "MECH_INSPECT_001",
+    "qc_notes": "Primary chamber space"
+  }
+]

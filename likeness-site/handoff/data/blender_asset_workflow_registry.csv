@@ -1,0 +1,8 @@
+workflow_id,workflow_name,use_case,source_inputs,output_formats,approval_gate,notes
+BLEND_001,Bake High To Low,Normal/AO maps for game props,High-poly + low-poly meshes,PNG maps + staged blend,Asset QA + screenshot,Use before Unreal import for hero props
+BLEND_002,Draft Character Assembly,Draft GLB assembly from approved 4-step refs,Clean sheet + parts + views,GLB + screenshot,Human identity review,Never final without retopo/rigging review
+BLEND_003,PBR Material Test Corner,Tileable materials for environments/props,Material brief + style bible,PBR maps + blend,Style review,Best first smoke test
+BLEND_004,Controlled Toon/Outline Test,Stylized mode experiment,Textured mesh,Test materials + screenshot,Art direction review,Not main LIKENESS unless approved
+BLEND_005,Iridescent Shader Test,Fashion/tech/cursed object experiments,Selected test mesh,Procedural material,Style review,Use sparingly
+BLEND_006,Multi-Stage Prop Animation,Animated keys/tapes/props/UI objects,Merged or separate prop parts,Animation preview + blend,Gameplay/narrative review,Good for evidence reveal animations
+BLEND_007,Geometry Nodes Scatter Dressing,Procedural environmental scatter,Target surface + collection,GN modifier + blend,Performance/style review,Use for dust/debris/photos/gravel/clutter

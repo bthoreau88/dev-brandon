@@ -1,0 +1,29 @@
+[
+  {
+    "mechanic_id": "MECH_INSPECT_001",
+    "name": "Inspectable Object",
+    "status": "IDEA",
+    "unreal_class": "BP_OVS_InspectableObject",
+    "web_component": "InspectableObject.tsx",
+    "description": "Player examines props and unlocks memory fragments",
+    "qa_notes": "Must be data-driven"
+  },
+  {
+    "mechanic_id": "MECH_MIRROR_LAG_001",
+    "name": "Mirror Lag",
+    "status": "IDEA",
+    "unreal_class": "BP_OVS_MirrorLagController",
+    "web_component": "MirrorLagScene.tsx",
+    "description": "Reflection or mirror state contradicts player timing",
+    "qa_notes": "No cheap jump scare dependency"
+  },
+  {
+    "mechanic_id": "MECH_ROOM_STATE_001",
+    "name": "Room State Controller",
+    "status": "IDEA",
+    "unreal_class": "BP_OVS_RoomStateController",
+    "web_component": "roomStateStore.ts",
+    "description": "Changes lighting, props, audio, interaction availability",
+    "qa_notes": "Core expandable system"
+  }
+]

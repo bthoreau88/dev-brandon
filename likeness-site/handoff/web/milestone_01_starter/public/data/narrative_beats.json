@@ -1,0 +1,32 @@
+[
+  {
+    "beat_id": "BEAT_ARRIVAL_001",
+    "name": "Arrival at Room 14",
+    "status": "IDEA",
+    "location_id": "LOC_DELLWOOD_ROOM14_001",
+    "characters": "CHR_THOREAU_001",
+    "trigger": "Player enters room",
+    "resulting_room_state": "STATE_00_NORMAL",
+    "web_unlock": "/evidence/key-14"
+  },
+  {
+    "beat_id": "BEAT_MIRROR_LAG_001",
+    "name": "The Mirror Answers Late",
+    "status": "IDEA",
+    "location_id": "LOC_DELLWOOD_ROOM14_001",
+    "characters": "CHR_THOREAU_001;CHR_DARK_THOREAU_001",
+    "trigger": "Inspect bathroom mirror",
+    "resulting_room_state": "STATE_02_MIRROR_LAG",
+    "web_unlock": "/tapes/mirror-lag"
+  },
+  {
+    "beat_id": "BEAT_TAPE_CONTRADICTION_001",
+    "name": "Tape Contradiction",
+    "status": "IDEA",
+    "location_id": "LOC_DELLWOOD_ROOM14_001",
+    "characters": "CHR_THOREAU_001;CHR_DRYA_001",
+    "trigger": "Play tape",
+    "resulting_room_state": "STATE_04_TAPE_CONTRADICTION",
+    "web_unlock": "/tapes/tape-03"
+  }
+]

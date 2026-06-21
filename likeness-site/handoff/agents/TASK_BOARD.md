@@ -72,3 +72,14 @@
 | EXP-004 | Create NanoGS test branch and plugin install checklist | Agent | Waiting | Requires UE project path and build environment. |
 | EXP-005 | Convert Unreal Engine Guide topics into weekly study sprints | Agent | Ready | Reference only. |
 | EXP-006 | Add expansion QC report template to build_notes | Agent | Ready | Must cite source and approval status. |
+
+
+## V003 Expansion - Blender MCP + fal.ai
+- [ ] Install/verify Blender MCP connection.
+- [ ] Install/verify fal.ai or approved provider MCP.
+- [ ] Run PBR material corner smoke test.
+- [ ] Run bake high-to-low test on a non-critical prop.
+- [ ] Create one LIKENESS Room 14 material pack.
+- [ ] Create one Geometry Nodes scatter/dressing test.
+- [ ] Export one staged GLB and one Unreal-ready FBX from Blender.
+- [ ] Update asset and workflow registries.

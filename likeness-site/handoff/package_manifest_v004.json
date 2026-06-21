@@ -1,0 +1,14 @@
+{
+  "package": "LIKENESS_THE_GAME_OVS_HANDOFF_V004_MILESTONE_01",
+  "created": "2026-06-13",
+  "base": "V003_BLENDER_MCP",
+  "adds": [
+    "Milestone 01 kickoff doc",
+    "Agent prompt",
+    "Acceptance report template",
+    "Three.js starter",
+    "Unreal starter plan",
+    "Task board CSV",
+    "Scaffold script"
+  ]
+}

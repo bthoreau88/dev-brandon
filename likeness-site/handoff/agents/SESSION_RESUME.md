@@ -20,3 +20,7 @@ Expansion package V002 created. These modules are optional enhancers:
 ## Last Agent Rule
 
 Do not proceed without updating this file after each session.
+
+
+## V003 Added
+Added Blender MCP + fal.ai as optional asset fabrication module. Use for asset baking, draft GLB assembly, PBR material generation, procedural shaders, prop animation, and Geometry Nodes environment dressing. This enhances the existing game/web pipeline but does not replace Unreal, Three.js, Image-Blaster, NanoGS, or the OVS Production Bible.

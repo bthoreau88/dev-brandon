@@ -1,0 +1,29 @@
+[
+  {
+    "level_id": "LOC_DELLWOOD_ROOM14_001",
+    "name": "Room 14",
+    "status": "IDEA",
+    "unreal_map": "L_Dellwood_Room14",
+    "web_route": "/room-14",
+    "story_function": "Primary chamber, argument loop, identity fracture",
+    "required_mechanics": "MECH_INSPECT_001;MECH_MIRROR_LAG_001;MECH_ROOM_STATE_001"
+  },
+  {
+    "level_id": "LOC_DELLWOOD_HALLWAY_001",
+    "name": "Dellwood Hallway",
+    "status": "IDEA",
+    "unreal_map": "L_Dellwood_Hallway",
+    "web_route": "/motel",
+    "story_function": "Threshold, repetition, impossible doors",
+    "required_mechanics": "MECH_ROOM_STATE_001"
+  },
+  {
+    "level_id": "LOC_DELLWOOD_OFFICE_001",
+    "name": "Front Office",
+    "status": "IDEA",
+    "unreal_map": "L_Dellwood_Office",
+    "web_route": "/motel/front-office",
+    "story_function": "Ledger, key exchange, arrival ritual",
+    "required_mechanics": "MECH_INSPECT_001"
+  }
+]

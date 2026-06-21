@@ -1,0 +1,10 @@
+id,track,task,status,priority,acceptance
+M01-001,Repo,Initialize or verify Git repository,Open,High,No code changes before source control
+M01-002,Folders,Create top-level production folders,Open,High,docs agents data unreal web assets expansions qa build_notes
+M01-003,Unreal,Create Unreal conceptual Content folder plan,Open,High,No final asset import
+M01-004,Unreal,Create graybox map plan L_OVS_M01_Room14_Graybox,Open,High,"PlayerStart, walls, door, mirror, prop proxy"
+M01-005,Web,Create Three.js starter project,Open,High,Vite-compatible minimal scene
+M01-006,Data,Create JSON copies of registries for web starter,Open,Medium,CSV remains source of truth
+M01-007,QA,Create milestone session report,Open,High,"Capture commands, files, risks"
+M01-008,Git,Commit stable scaffold,Open,High,Commit message includes milestone
+M01-009,Stop,Stop before gameplay systems,Open,Critical,Requires user approval for Milestone 02

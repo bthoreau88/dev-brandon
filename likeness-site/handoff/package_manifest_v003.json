@@ -1,0 +1,14 @@
+{
+  "package_name": "LIKENESS_THE_GAME_OVS_HANDOFF_V003_BLENDER_MCP",
+  "created": "2026-06-12",
+  "basis": "V002 expansions package plus Blender MCP/fal.ai asset fabrication module",
+  "new_files": [
+    "docs/16_Blender_MCP_FAL_Asset_Fabrication_Module.md",
+    "agents/expansion_prompts/BLENDER_MCP_FAL_AGENT_PROMPT.md",
+    "data/blender_asset_workflow_registry.csv",
+    "expansions/blender_mcp_fal/README_BLENDER_MCP_FAL.md",
+    "expansions/blender_mcp_fal/prompts/*.md",
+    "expansions/blender_mcp_fal/tests/BLENDER_ASSET_QA_CHECKLIST.md"
+  ],
+  "module_status": "optional enhancement; not core dependency"
+}

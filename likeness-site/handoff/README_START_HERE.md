@@ -36,3 +36,26 @@ This package now includes optional expansion modules for:
 - Unreal Engine Guide learning/checklist support.
 
 Start with `docs/12_Expansion_Source_Matrix.md`, then `docs/12_Expansion_Workflow_Modules.md`. These modules enhance the project; they do not replace the existing LIKENESS pipeline.
+
+
+## V003 BLENDER MCP + FAL.AI EXPANSION
+This package now includes an optional Blender MCP + fal.ai asset fabrication module. Start with `docs/16_Blender_MCP_FAL_Asset_Fabrication_Module.md`, then use `agents/expansion_prompts/BLENDER_MCP_FAL_AGENT_PROMPT.md` and `/expansions/blender_mcp_fal/prompts/`.
+
+Use this module only to enhance asset creation, material lookdev, bake workflows, animation tests, and procedural dressing. Do not let it replace the OVS core pipeline, Unreal vertical slice, or Three.js companion architecture.
+
+
+---
+
+# V004 - MILESTONE 01 STARTER BUILD
+
+Use this package version when you are ready to begin actual project setup. V004 adds a controlled Milestone 01 layer: repository verification, Unreal skeleton planning, Three.js starter scene, shared registry handoff, QA report template, and agent-ready kickoff prompt.
+
+Start here for build execution:
+
+1. `docs/17_Milestone_01_Build_Kickoff.md`
+2. `agents/MILESTONE_01_AGENT_PROMPT.md`
+3. `data/milestone_01_task_board.csv`
+4. `web/milestone_01_starter/`
+5. `unreal/milestone_01/M01_UNREAL_STARTER_PLAN.md`
+
+Do not proceed to Milestone 02 until Milestone 01 passes QA and the user approves the foundation.
