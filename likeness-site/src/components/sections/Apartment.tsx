@@ -61,8 +61,11 @@ export function Apartment() {
       id="apartment"
       className="relative mx-auto max-w-[1400px] px-6 py-24 md:px-8 md:py-32"
     >
-      <span className="mono text-xs tracking-[0.4em] text-accent">
-        § 08–09 // LOCATION BIBLE
+      <span className="mono inline-flex items-center gap-2 text-xs tracking-[0.4em] text-accent">
+        <span className="rounded-sm border border-teal/40 px-2 py-0.5 text-[9px] text-teal">
+          TAPE 03
+        </span>
+        THE APARTMENT · LOCATION BIBLE
       </span>
       <h2 className="mt-4 max-w-[20ch] text-4xl font-bold leading-[1.05] tracking-tight md:text-6xl">
         The apartment has a will.

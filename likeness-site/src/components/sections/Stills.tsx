@@ -21,11 +21,6 @@ const POSTERS = [
     code: "KEY ART · A·04 — THE OTHER",
     title: "End of the hallway",
   },
-  {
-    img: asset("/stills/drya-atrium.png"),
-    code: "LOOP · CONTAIN THE RESONANCE",
-    title: "The Room 14 atrium",
-  },
 ];
 
 // 16:9 captured frames.
@@ -61,24 +56,6 @@ const WIDES = [
     note: "Teal threshold bleeding from a room she didn't leave open.",
   },
   {
-    img: asset("/stills/drya-main-menu.png"),
-    code: "UI · G·01 — MAIN MENU",
-    title: "Channel 03 · New Game",
-    note: "Diegetic menu. DRYA at the threshold, the OVS lab held behind glass.",
-  },
-  {
-    img: asset("/stills/drya-customization.png"),
-    code: "SYS · LOADOUT",
-    title: "Configuration",
-    note: "DRYA sets her approach before she descends — recon, quiet, or force.",
-  },
-  {
-    img: asset("/stills/drya-corridor.png"),
-    code: "ENV · LOADING · WATCHED",
-    title: "The Wet Corridor",
-    note: "Held in a flooded basement passage. Practical light failing, one arm online.",
-  },
-  {
     img: asset("/stills/the-other.png"),
     code: "CHAR · B·06 — THE OTHER",
     title: "Off-axis. Never confirmed",
@@ -95,12 +72,6 @@ const WIDES = [
     code: "ENV · DOOR 14 — THE CORRIDOR",
     title: "Toward the numbered door",
     note: "The pair walk a corridor that repeats. Room 14 is a structure, not a single place.",
-  },
-  {
-    img: asset("/stills/open-world-city.png"),
-    code: "SYS · THE CITY — MARTIAL LAW",
-    title: "What LIKENESS opens into",
-    note: "Beyond the apartment vertical slice: the wider world the franchise expands toward.",
   },
 ];
 
@@ -121,8 +92,8 @@ export function Stills() {
         is the budget; every still holds the lock.
       </p>
 
-      {/* key art + field */}
-      <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
+      {/* key art */}
+      <div className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-3">
         {POSTERS.map((p, i) => (
           <motion.figure
             key={p.code}

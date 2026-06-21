@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { asset } from "@/lib/base";
+import { WORKS } from "@/lib/registry";
 
 const SENSITIVITY = 0.8;
 const SHARE_URL = "https://bthoreau88.github.io/dev-brandon/";
@@ -294,6 +295,82 @@ export function UniverseHero() {
           <p className="mono mt-6 hidden text-[10px] tracking-[0.3em] text-muted md:block">
             ◂ MOVE YOUR MOUSE TO SCRUB THE ROOM ▸
           </p>
+        </div>
+      </section>
+
+      {/* Anthology — the works of the universe */}
+      <section className="relative z-[1] border-t border-white/10 bg-background">
+        <div className="grain mx-auto max-w-[1400px] px-5 py-20 sm:px-8 md:py-28">
+          <span className="mono text-xs tracking-[0.4em] text-accent">
+            THE LIKENESS UNIVERSE // WORKS
+          </span>
+          <h2 className="mt-4 max-w-[20ch] text-3xl font-bold leading-[1.05] tracking-tight md:text-5xl">
+            One motel. Many tapes.
+          </h2>
+          <p className="mt-4 max-w-[58ch] text-sm leading-relaxed text-muted md:text-base">
+            An open archive of films, games, and threads that share one world, one
+            grade, and one law. The room remembers what love edits out.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2">
+            {WORKS.map((w) => {
+              const card = (
+                <div className="hud-frame glass flex h-full flex-col rounded-md p-6 transition-colors hover:border-accent/40">
+                  <div className="flex items-center justify-between">
+                    <span className="mono rounded-sm border border-teal/40 px-2 py-0.5 text-[9px] tracking-[0.2em] text-teal">
+                      {w.kind}
+                    </span>
+                    <span className="mono text-[9px] tracking-[0.2em] text-muted">
+                      {w.status}
+                    </span>
+                  </div>
+                  <h3 className="mt-4 text-xl font-bold tracking-tight md:text-2xl">
+                    {w.title}
+                  </h3>
+                  <span className="mono mt-1 text-[10px] tracking-[0.2em] text-muted">
+                    {w.setting}
+                  </span>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
+                    {w.blurb}
+                  </p>
+                  {w.route && (
+                    <span className="mono mt-5 text-[10px] tracking-[0.2em] text-accent uppercase">
+                      Enter →
+                    </span>
+                  )}
+                </div>
+              );
+              return w.route ? (
+                <Link key={w.id} href={w.route} className="block">
+                  {card}
+                </Link>
+              ) : (
+                <div key={w.id} className="opacity-70">
+                  {card}
+                </div>
+              );
+            })}
+          </div>
+
+          <nav className="mt-10 flex flex-wrap gap-2">
+            {[
+              ["Characters", "/characters"],
+              ["Evidence", "/evidence"],
+              ["Tapes", "/tapes"],
+              ["Motel Map", "/motel"],
+              ["Room 14", "/room-14"],
+              ["Devlog", "/devlog"],
+              ["Press", "/press"],
+            ].map(([label, href]) => (
+              <Link
+                key={href}
+                href={href}
+                className="mono rounded-sm border border-white/15 px-3 py-1.5 text-[10px] tracking-[0.2em] text-muted uppercase transition-colors hover:text-foreground"
+              >
+                {label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </section>
     </div>
