@@ -82,6 +82,42 @@ character wardrobe, not a model shoot.
 
 ---
 
+## 4b · `/12-brand-story`  —  "OMNIA VANITAS" · 60s · what OVS is
+
+Not a game trailer — a statement of intent. This is the studio film: who OVS is and
+what the LIKENESS universe stands for. Cream/charcoal editorial motion, restrained,
+the production-bible look brought to life. Four movements, ~15s each.
+
+**Movement 1 — THE STUDIO (0–12s)**
+Black. The OVS mark resolves out of grain. A cream editorial frame with thin rules
+draws itself — the bible, in motion.
+*VO: "Omnia Vanitas. All is vanity. We build worlds that remember."*
+
+**Movement 2 — THE THESIS (12–30s)**
+Restrained inserts, each held: a face, a tape, a mirror lag, a locket re-cropping
+itself.
+*VO: "A likeness is not you. It is the handled version — the copy they can market,
+desire, mourn, and edit. We make the room that keeps the original."*
+
+**Movement 3 — THE UNIVERSE (30–48s)**
+Room 14 at The Dellwood. THOREAU and DRYA, not touching. DARK THOREAU at the frame
+edge. A CRT flicks channels — game, film, fashion, music, archive — one universe.
+*VO: "LIKENESS is the first room. A motel that edits memory. A romance under
+suspicion. A game, a film, a record."*
+
+**Movement 4 — THE PROMISE (48–60s)**
+The oxblood door, near-black, held too long.
+*VO: "Bad studios answer. We haunt."*
+Title: OMNIA VANITAS STUDIOS · LIKENESS.
+End line (bone-yellow serif): "The room remembers what love edits out."
+
+**Law:** slow push-ins and locked-off stillness, practical flicker, film grain, diegetic
+room sound over a low drone, silence at the end. Identity lock held throughout. No UGC
+energy, no fast cuts, no gore, no sci-fi, no glossy CGI. Format 16:9 / 2.39:1, plus a
+9:16 cut-down for socials.
+
+---
+
 ## 5 · RUN + STAGING  (docs/12 — Track C)
 
 1. Install the skills in a **separate marketing/reference workspace** only.
