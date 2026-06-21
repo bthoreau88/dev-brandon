@@ -1,0 +1,28 @@
+// PASTE this "Modules" array into LikenessTheGame.uproject, as a top-level key
+// (sibling of "FileVersion", "EngineAssociation", "Plugins"). If a "Modules"
+// key already exists, merge this entry into it. Mind the trailing comma so the
+// surrounding JSON stays valid.
+//
+// Example placement:
+// {
+//   "FileVersion": 3,
+//   "EngineAssociation": "5.8",
+//   "Category": "",
+//   "Description": "",
+//   "Modules": [            <-- add this block
+//     {
+//       "Name": "LikenessTheGame",
+//       "Type": "Runtime",
+//       "LoadingPhase": "Default"
+//     }
+//   ],
+//   "Plugins": [ ... ]
+// }
+
+"Modules": [
+	{
+		"Name": "LikenessTheGame",
+		"Type": "Runtime",
+		"LoadingPhase": "Default"
+	}
+]
