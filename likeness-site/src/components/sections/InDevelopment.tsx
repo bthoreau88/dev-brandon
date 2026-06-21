@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const META = [
   ["BUILD", "UE5 Vertical Slice"],
   ["RUNTIME", "~30 Minutes"],
-  ["LOCATION", "One Apartment"],
+  ["LOCATION", "Room 14 · The Dellwood"],
   ["ENDINGS", "Two · Both Ambiguous"],
 ];
 

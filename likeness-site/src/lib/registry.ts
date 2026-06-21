@@ -262,6 +262,11 @@ export type LogEntry = { tag: string; title: string; body: string };
 
 export const DEVLOG: LogEntry[] = [
   {
+    tag: "UNIVERSE",
+    title: "Anthology restructure + cohesion pass",
+    body: "Established the LIKENESS UNIVERSE as the umbrella: LIKENESS : THE GAME (Dellwood motel) as the flagship and TAPE 03 (the apartment) as a canonical tape, each tagged. Added a press fact sheet and quarantined the early sci-fi cut to a non-canon /alt page.",
+  },
+  {
     tag: "COMPANION",
     title: "Data-driven routes online",
     body: "Characters, Evidence, Tapes, and the Motel Map now read from the shared registry (src/lib/registry.ts), mirroring the game's CSV registries. Matching IDs across site and game; content expands without losing identity.",
@@ -294,4 +299,85 @@ export const PHASES: { n: string; action: string; done: boolean }[] = [
   { n: "1", action: "Lock vertical-slice scope and task board", done: false },
   { n: "9", action: "Three.js companion alpha — routes load from shared JSON", done: true },
   { n: "10", action: "Lock the vertical slice — build, QA, captures, handoff", done: false },
+];
+
+// ---- The anthology · LIKENESS UNIVERSE works (§ 02 "open motel multiverse") ----
+// One umbrella, distinct artifacts. The motel game is the flagship; TAPE 03 is a
+// canonical tape/film; fashion + music are threads to come.
+export type Work = {
+  id: string;
+  title: string;
+  kind: "GAME" | "TAPE" | "THREAD";
+  status: string;
+  setting: string;
+  blurb: string;
+  route?: string;
+};
+
+export const WORKS: Work[] = [
+  {
+    id: "WORK_LIKENESS_GAME",
+    title: "LIKENESS : THE GAME",
+    kind: "GAME",
+    status: "IN DEVELOPMENT",
+    setting: "The Dellwood motel · Room 14",
+    blurb: "The flagship. A psychological romantic horror where a motel room behaves like a memory editor. THOREAU and DRYA, the argument, and the double who answers for them.",
+    route: "/room-14",
+  },
+  {
+    id: "WORK_TAPE_03",
+    title: "TAPE 03",
+    kind: "TAPE",
+    status: "BIBLE LOCKED",
+    setting: "The apartment · 3:14 AM",
+    blurb: "A recovered tape within the universe. A man wakes with a wound, a camcorder, and no memory of forty-eight hours. The apartment rearranges; a voice that is his own is already inside.",
+    route: "/room-testifies",
+  },
+  {
+    id: "WORK_OVS_FASHION",
+    title: "OVS · Wardrobe",
+    kind: "THREAD",
+    status: "PLANNED",
+    setting: "Motel-noir lookbook",
+    blurb: "The wardrobe language of the universe — lived-in, restrained, identity-locked. A fashion thread, not a model shoot.",
+  },
+  {
+    id: "WORK_OVS_MUSIC",
+    title: "OVS · Score",
+    kind: "THREAD",
+    status: "PLANNED",
+    setting: "Room tone as music",
+    blurb: "Tape hiss, fluorescent hum, a detuned piano under a drone. The sound archive the rooms are scored from.",
+  },
+];
+
+// ---- Alternate cut — the discarded sci-fi direction (NON-CANON, quarantined) ----
+export type AltFrame = { img: string; label: string; note: string };
+
+export const ALT_FRAMES: AltFrame[] = [
+  {
+    img: "/stills/drya-main-menu.png",
+    label: "MAIN MENU · OVS LAB",
+    note: "A diegetic menu inside an OVS facility — the sci-fi framing the bible later retired.",
+  },
+  {
+    img: "/stills/drya-customization.png",
+    label: "BIOMECH LOADOUT",
+    note: "Arm-configuration screen. The augment-as-mechanic idea, replaced by tape + memory.",
+  },
+  {
+    img: "/stills/drya-corridor.png",
+    label: "WET CORRIDOR · ARM ONLINE",
+    note: "DRYA with a cybernetic arm in a flooded passage. Off the motel-noir line.",
+  },
+  {
+    img: "/stills/drya-atrium.png",
+    label: "ROOM 14 ATRIUM · RESONANCE",
+    note: "An open-interior gameplay moment with the biomech arm — a louder game than LIKENESS became.",
+  },
+  {
+    img: "/stills/open-world-city.png",
+    label: "THE CITY · MARTIAL LAW",
+    note: "The abandoned open-world expansion. LIKENESS locked to one location instead.",
+  },
 ];

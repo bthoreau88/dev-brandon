@@ -29,7 +29,7 @@ const subjects = [
       ["EVIDENCE", "3 TAPES · 1 WOUND"],
       ["THE OTHER", "A VOICE THAT IS HIS"],
     ],
-    note: "Wakes at 3:14 AM to an apartment arranged wrong. Someone with his face is already inside, and the tapes know more than he does.",
+    note: "Wakes at 3:14 AM to Room 14 arranged wrong. Someone with his face is already inside, and the tapes know more than he does.",
   },
 ];
 

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "framer-motion";
 import { DEVLOG, EXPANSIONS, PHASES } from "@/lib/registry";
 import { CompanionShell } from "./CompanionShell";
@@ -97,6 +98,15 @@ export function Devlog() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* non-canon */}
+      <div className="mono mt-12 border-l border-accent/30 pl-4 text-[11px] leading-relaxed tracking-[0.05em] text-muted">
+        See also the{" "}
+        <Link href="/alt" className="text-accent hover:text-foreground">
+          alternate cut
+        </Link>{" "}
+        — the early sci-fi direction, kept on record but non-canon.
       </div>
     </CompanionShell>
   );
