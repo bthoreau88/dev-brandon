@@ -1,6 +1,6 @@
 // LikenessTheGame.Build.cs — primary game module for LIKENESS : THE GAME.
-// Minimal: this module exists to compile the DataTable row structs in
-// Public/LikenessRows.h. Gameplay code can be added here later.
+// Compiles the DataTable row structs (Public/LikenessRows.h) and the data-driven
+// inspect component (OVSInteractorComponent). UMG/Slate are needed for the widget.
 
 using UnrealBuildTool;
 
@@ -14,7 +14,10 @@ public class LikenessTheGame : ModuleRules
 		{
 			"Core",
 			"CoreUObject",
-			"Engine"
+			"Engine",
+			"UMG",
+			"Slate",
+			"SlateCore"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });
