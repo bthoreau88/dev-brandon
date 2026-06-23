@@ -1,4 +1,7 @@
-asset_id,type,name,status,source,owner,engine_path,web_path,dependencies,qc_notes
-PROP_KEY14_001,prop,Brass Motel Key 14,IDEA,,Brandon,,,LOC_DELLWOOD_ROOM14_001,"Must read as old brass, not shiny gold"
-PROP_LOCKET_001,prop,Locket Tintype,IDEA,,Brandon,,,BEAT_ARGUMENT_RESIDUE_001,High detail close inspect asset
-LOC_DELLWOOD_ROOM14_001,environment,The Dellwood Room 14,IDEA,,Brandon,,,MECH_INSPECT_001,Primary chamber space
+asset_id,type,name,status,source,owner,engine_path,web_path,dependencies,qc_notes,inspect_text
+PROP_KEY14_001,prop,Brass Motel Key 14,IDEA,,Brandon,,,LOC_DELLWOOD_ROOM14_001,"Must read as old brass, not shiny gold","Room 14. The number is worn soft, but legible."
+PROP_LOCKET_001,prop,Locket Tintype,IDEA,,Brandon,,,BEAT_ARGUMENT_RESIDUE_001,High detail close inspect asset,"A tintype locket. The two faces inside don't always agree on who was happy."
+PROP_TAPE_001,prop,Tape 03,IDEA,,Brandon,,,MECH_ROOM_STATE_001,"Reads as worn consumer cassette; playback rewrites room state","Tape 03. Play it and the room edits itself behind you."
+PROP_MIRROR_001,prop,Bathroom Mirror,IDEA,,Brandon,,,MECH_MIRROR_LAG_001,"Reflection lag must read clearly — no cheap jump scare","The reflection answers late. Your eyes are open; the reflected ones aren't."
+PROP_DEVICE_001,prop,The Black Device,IDEA,,Brandon,,,MECH_INSPECT_001,"Purposeful, never explained outright. No sci-fi UI gloss","Cold to the touch, warm where it shouldn't be. It is listening."
+LOC_DELLWOOD_ROOM14_001,environment,The Dellwood Room 14,IDEA,,Brandon,,,MECH_INSPECT_001,Primary chamber space,

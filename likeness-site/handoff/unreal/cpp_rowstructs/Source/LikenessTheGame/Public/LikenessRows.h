@@ -105,6 +105,9 @@ struct FAssetManifestRow : public FTableRowBase
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LIKENESS|Asset")
 	FString qc_notes;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "LIKENESS|Asset")
+	FString inspect_text;
 };
 
 // mechanics_registry.csv  -> DT_MechanicsRegistry
