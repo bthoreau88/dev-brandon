@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "states": [
+    "SPECIFIED",
+    "CODEX_IMPLEMENTING",
+    "CODEX_PR_OPEN",
+    "CLAUDE_REVIEWING",
+    "CLAUDE_ENHANCEMENT_PR",
+    "ARCHITECT_REVIEW",
+    "FOUNDER_APPROVAL",
+    "MERGED",
+    "DOCUMENTED"
+  ],
+  "branchPrefixes": {
+    "codex": "codex/",
+    "claudeReview": "claude/review-",
+    "claudeEnhance": "claude/enhance-",
+    "integration": "integration/"
+  }
+}
