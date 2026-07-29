@@ -209,6 +209,7 @@ export const ROUTES: Route[] = [
   { route: "/tapes", label: "Tapes", fn: "Tape archive and unlock state.", live: true },
   { route: "/motel", label: "Motel Map", fn: "Interactive Dellwood map and hidden rooms.", live: true },
   { route: "/street", label: "The Street", fn: "The exterior sweep — street cast and doubles outside Room 14.", live: true },
+  { route: "/wardrobe", label: "Wardrobe", fn: "The motel-noir lookbook — identity-locked costume department.", live: true },
   { route: "/devlog", label: "Devlog", fn: "Production notes and expansion modules.", live: true },
   { route: "/room-14", label: "Room 14", fn: "Explorable 3D chamber with inspectable objects.", live: true },
 ];
@@ -338,9 +339,10 @@ export const WORKS: Work[] = [
     id: "WORK_OVS_FASHION",
     title: "OVS · Wardrobe",
     kind: "THREAD",
-    status: "PLANNED",
+    status: "LOOKBOOK LIVE",
     setting: "Motel-noir lookbook",
     blurb: "The wardrobe language of the universe — lived-in, restrained, identity-locked. A fashion thread, not a model shoot.",
+    route: "/wardrobe",
   },
   {
     id: "WORK_OVS_MUSIC",
