@@ -14,6 +14,7 @@ const routes = [
   { label: "Characters", href: "/characters" },
   { label: "The Street", href: "/street" },
   { label: "Wardrobe", href: "/wardrobe" },
+  { label: "Score", href: "/score" },
   { label: "Room Testifies", href: "/room-testifies" },
   { label: "Prompts", href: "/prompts" },
 ];
