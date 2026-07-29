@@ -210,6 +210,7 @@ export const ROUTES: Route[] = [
   { route: "/motel", label: "Motel Map", fn: "Interactive Dellwood map and hidden rooms.", live: true },
   { route: "/street", label: "The Street", fn: "The exterior sweep — street cast and doubles outside Room 14.", live: true },
   { route: "/wardrobe", label: "Wardrobe", fn: "The motel-noir lookbook — identity-locked costume department.", live: true },
+  { route: "/score", label: "Score", fn: "Room tone as music — the sound archive and cue list.", live: true },
   { route: "/devlog", label: "Devlog", fn: "Production notes and expansion modules.", live: true },
   { route: "/room-14", label: "Room 14", fn: "Explorable 3D chamber with inspectable objects.", live: true },
 ];
@@ -348,9 +349,10 @@ export const WORKS: Work[] = [
     id: "WORK_OVS_MUSIC",
     title: "OVS · Score",
     kind: "THREAD",
-    status: "PLANNED",
+    status: "SOUND ARCHIVE",
     setting: "Room tone as music",
     blurb: "Tape hiss, fluorescent hum, a detuned piano under a drone. The sound archive the rooms are scored from.",
+    route: "/score",
   },
 ];
 
