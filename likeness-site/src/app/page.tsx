@@ -14,6 +14,7 @@ import { Motion } from "@/components/sections/Motion";
 import { RecoveredFootage } from "@/components/sections/RecoveredFootage";
 import { ConceptFrames } from "@/components/sections/ConceptFrames";
 import { Systems } from "@/components/sections/Systems";
+import { Threads } from "@/components/sections/Threads";
 import { Choice } from "@/components/sections/Choice";
 import { Footer } from "@/components/sections/Footer";
 
@@ -39,6 +40,7 @@ export default function Home() {
         <RecoveredFootage />
         <ConceptFrames />
         <Systems />
+        <Threads />
         <Choice />
       </main>
       <Footer />
