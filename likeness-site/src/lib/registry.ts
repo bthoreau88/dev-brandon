@@ -204,6 +204,7 @@ export type Route = { route: string; label: string; fn: string; live: boolean };
 
 export const ROUTES: Route[] = [
   { route: "/universe", label: "Landing", fn: "OVS hierarchy and current campaign title.", live: true },
+  { route: "/studio", label: "Studio", fn: "The Omnia Vanitas doctrine, anthology, and north star.", live: true },
   { route: "/characters", label: "Characters", fn: "Identity cards and doubles.", live: true },
   { route: "/evidence", label: "Evidence", fn: "The inspectable object timeline.", live: true },
   { route: "/tapes", label: "Tapes", fn: "Tape archive and unlock state.", live: true },
