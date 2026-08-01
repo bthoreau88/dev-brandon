@@ -10,6 +10,7 @@ const anchors = [
 ];
 
 const routes = [
+  { label: "Studio", href: "/studio" },
   { label: "Universe", href: "/universe" },
   { label: "Characters", href: "/characters" },
   { label: "The Street", href: "/street" },
@@ -49,16 +50,16 @@ export function Navbar() {
             OVS
           </span>
           <span className="mono hidden text-[10px] tracking-[0.3em] text-muted sm:inline">
-            // TAPE-03
+            {"// TAPE-03"}
           </span>
         </a>
 
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-x-5 gap-y-1 lg:flex">
           {anchors.map((l) => (
             <a
               key={l.href}
               href={l.href}
-              className="mono text-xs tracking-[0.2em] text-muted uppercase transition-colors hover:text-foreground"
+              className="mono text-[11px] tracking-[0.15em] text-muted uppercase transition-colors hover:text-foreground"
             >
               {l.label}
             </a>
@@ -67,7 +68,7 @@ export function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className="mono text-xs tracking-[0.2em] text-teal/80 uppercase transition-colors hover:text-foreground"
+              className="mono text-[11px] tracking-[0.15em] text-teal/80 uppercase transition-colors hover:text-foreground"
             >
               {l.label}
             </Link>
