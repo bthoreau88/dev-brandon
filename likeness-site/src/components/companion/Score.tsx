@@ -2,12 +2,14 @@
 
 // OVS · SCORE — room tone as music.
 // The sound archive the rooms are scored from: tape hiss, fluorescent hum, a
-// detuned piano under a drone. No audio ships here — the page is the score's
-// paper trail (cues, room states, signal chain), rendered in the OVS dark
-// system. Waveforms are deterministic (SSR-safe, no hydration drift).
+// detuned piano under a drone. Every cue is procedurally SYNTHESIZED room tone
+// (no samples) and plays in-page. Rendered in the OVS dark system; waveforms
+// are deterministic (SSR-safe, no hydration drift).
 
+import { useRef, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { asset } from "@/lib/base";
 
 // Deterministic bar heights (0..1) — a seeded pseudo-waveform, stable across
 // server and client render.
@@ -38,6 +40,8 @@ type Cue = {
   time: string;
   seed: number;
   note: string;
+  audio: string;
+  loop?: boolean;
   flag?: "drone" | "contradiction";
 };
 
@@ -46,32 +50,37 @@ const CUES: Cue[] = [
     code: "CUE_00",
     title: "Room Tone (Normal)",
     state: "STATE_00 · NORMAL",
-    time: "∞",
+    time: "∞ LOOP",
     seed: 3,
+    audio: "cue_00.wav",
+    loop: true,
     note: "The baseline you stop hearing: a 40 Hz refrigerator drone and the fluorescent buzz. Silence with a pulse in it.",
   },
   {
     code: "CUE_01",
     title: "Arrival",
     state: "BEAT · ARRIVAL",
-    time: "1:14",
+    time: "0:06",
     seed: 9,
+    audio: "cue_01.wav",
     note: "Brass key in a worn lock, the desk bell's dead sustain, and one detuned piano note that never gets a second.",
   },
   {
     code: "CUE_02",
     title: "Residue",
     state: "BEAT · RESIDUE",
-    time: "2:48",
+    time: "0:10",
     seed: 21,
+    audio: "cue_02.wav",
     note: "Tape hiss rising like damp through drywall — a memory bleeding in from the next room at the wrong volume.",
   },
   {
     code: "CUE_03",
     title: "Mirror Lag",
     state: "STATE_02 · MIRROR LAG",
-    time: "0:37",
+    time: "0:06",
     seed: 42,
+    audio: "cue_03.wav",
     note: "A single note, then its reflection — a half-beat late and a semitone wrong. The echo arrives before you decide to play.",
     flag: "drone",
   },
@@ -79,17 +88,19 @@ const CUES: Cue[] = [
     code: "CUE_04",
     title: "Tape Contradiction",
     state: "STATE_04 · TAPE CONTRADICTION",
-    time: "3:03",
+    time: "0:08",
     seed: 68,
-    note: "Two takes of the same spoken phrase, panned hard left and right, drifting out of sync until neither is the truth.",
+    audio: "cue_04.wav",
+    note: "Two takes of the same spoken cadence, panned hard left and right, drifting out of sync until neither is the truth.",
     flag: "contradiction",
   },
   {
     code: "CUE_05",
     title: "Double Occupancy",
     state: "BEAT · DOUBLE OCCUPANCY",
-    time: "4:19",
+    time: "0:10",
     seed: 91,
+    audio: "cue_05.wav",
     note: "A breath that isn't yours, low in the mix, and a drone that swells to fill the room a second body would displace.",
     flag: "drone",
   },
@@ -108,22 +119,36 @@ function Waveform({
   seed,
   bars = 40,
   className = "",
+  active = false,
 }: {
   seed: number;
   bars?: number;
   className?: string;
+  active?: boolean;
 }) {
   const heights = wave(seed, bars);
   return (
     <div
       aria-hidden
-      className={`flex h-full w-full items-end gap-[2px] ${className}`}
+      className={`flex h-full w-full items-end gap-[2px] ${
+        active ? "opacity-100" : ""
+      } ${className}`}
     >
       {heights.map((h, i) => (
         <span
           key={i}
-          className="flex-1 rounded-sm bg-teal/60"
-          style={{ height: `${Math.round(h * 100)}%` }}
+          className={`flex-1 rounded-sm ${
+            active ? "eq-bar bg-accent" : "bg-teal/60"
+          }`}
+          style={{
+            height: `${Math.round(h * 100)}%`,
+            ...(active
+              ? {
+                  animationDelay: `${(i % 12) * 0.07}s`,
+                  animationDuration: `${0.7 + ((i * 29) % 60) / 100}s`,
+                }
+              : {}),
+          }}
         />
       ))}
     </div>
@@ -134,8 +159,39 @@ export function Score() {
   // Hero equalizer: many bars, animated via CSS with staggered timing.
   const heroBars = 64;
 
+  // One shared <audio> element (rendered below); one cue plays at a time.
+  // React stops it on unmount, so no cleanup effect is needed.
+  const audioRef = useRef<HTMLAudioElement>(null);
+  const [playing, setPlaying] = useState<string | null>(null);
+
+  const toggleCue = (cue: Cue) => {
+    const a = audioRef.current;
+    if (!a) return;
+    if (playing === cue.code) {
+      a.pause();
+      setPlaying(null);
+      return;
+    }
+    a.pause();
+    a.src = asset(`/assets/audio/${cue.audio}`);
+    a.loop = Boolean(cue.loop);
+    a.currentTime = 0;
+    void a.play().then(
+      () => setPlaying(cue.code),
+      () => setPlaying(null),
+    );
+  };
+
   return (
     <div className="relative">
+      {/* shared audio element for the cue archive */}
+      <audio
+        ref={audioRef}
+        preload="none"
+        onEnded={() => setPlaying(null)}
+        className="hidden"
+      />
+
       <div className="mx-auto max-w-[1400px] px-6 pt-7 md:px-10">
         <Link
           href="/"
@@ -173,8 +229,8 @@ export function Score() {
           <p className="mt-6 max-w-[54ch] text-sm leading-relaxed text-muted md:text-base">
             Room tone as music. The sound archive the LIKENESS rooms are scored
             from — tape hiss, a fluorescent hum, a detuned piano under a drone.
-            No song plays here. This is the paper trail: what the room sounds
-            like while it edits your memory.
+            Every cue below is procedurally synthesized and plays in-page. Press
+            one, and the room starts listening back.
           </p>
           <span className="mono mt-6 inline-flex items-center gap-2.5 rounded-sm border border-teal/40 px-4 py-2 text-[10px] font-semibold tracking-[0.2em] text-teal uppercase">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-teal" />
@@ -227,9 +283,9 @@ export function Score() {
         </h2>
         <p className="mt-5 max-w-[60ch] text-sm leading-relaxed text-muted md:text-base">
           Each cue is filed against a room state, the way an object unlocks a
-          memory. The waveforms are reference shapes — the score is diegetic, so
-          every cue has to be something the room could plausibly be making on
-          its own.
+          memory. Press play — every cue is procedurally synthesized room tone,
+          no samples, so it&rsquo;s something the room could plausibly be making
+          on its own.
         </p>
 
         <div className="mt-12 space-y-3">
@@ -245,15 +301,29 @@ export function Score() {
                 damping: 22,
                 delay: (i % 3) * 0.05,
               }}
-              className={`hud-frame glass group grid grid-cols-1 gap-5 rounded-md p-5 md:grid-cols-[auto_1fr_auto] md:items-center md:gap-7 md:p-6 ${
-                c.flag === "contradiction" ? "ring-1 ring-accent/40" : ""
+              className={`hud-frame glass group grid grid-cols-1 gap-5 rounded-md p-5 transition-colors md:grid-cols-[auto_1fr_auto] md:items-center md:gap-7 md:p-6 ${
+                playing === c.code
+                  ? "ring-1 ring-teal/60"
+                  : c.flag === "contradiction"
+                    ? "ring-1 ring-accent/40"
+                    : ""
               }`}
             >
-              {/* index + play glyph */}
+              {/* play/pause control + label */}
               <div className="flex items-center gap-4">
-                <span className="grid h-11 w-11 place-items-center rounded-sm border border-teal/40 text-teal transition-colors group-hover:bg-teal group-hover:text-black">
-                  ▶
-                </span>
+                <button
+                  type="button"
+                  onClick={() => toggleCue(c)}
+                  aria-label={`${playing === c.code ? "Pause" : "Play"} ${c.title}`}
+                  aria-pressed={playing === c.code}
+                  className={`grid h-11 w-11 shrink-0 place-items-center rounded-sm border text-sm transition-colors ${
+                    playing === c.code
+                      ? "border-teal bg-teal text-black"
+                      : "border-teal/40 text-teal hover:bg-teal hover:text-black"
+                  }`}
+                >
+                  {playing === c.code ? "❚❚" : "▶"}
+                </button>
                 <div>
                   <span className="mono block text-[10px] tracking-[0.3em] text-teal/90">
                     {c.code}
@@ -266,13 +336,19 @@ export function Score() {
 
               {/* waveform + note */}
               <div className="min-w-0">
-                <div className="h-10 w-full">
+                <button
+                  type="button"
+                  onClick={() => toggleCue(c)}
+                  aria-label={`${playing === c.code ? "Pause" : "Play"} ${c.title}`}
+                  className="block h-10 w-full cursor-pointer"
+                >
                   <Waveform
                     seed={c.seed}
                     bars={44}
+                    active={playing === c.code}
                     className={c.flag === "contradiction" ? "opacity-90" : ""}
                   />
-                </div>
+                </button>
                 <p className="mt-2 text-[12px] leading-relaxed text-muted">
                   {c.note}
                 </p>
@@ -280,7 +356,9 @@ export function Score() {
 
               {/* meta */}
               <div className="mono flex shrink-0 flex-row items-center justify-between gap-4 text-[10px] tracking-[0.2em] text-muted md:flex-col md:items-end md:justify-center">
-                <span className="text-accent/90">{c.state}</span>
+                <span className={playing === c.code ? "text-teal" : "text-accent/90"}>
+                  {playing === c.code ? "▶ NOW PLAYING" : c.state}
+                </span>
                 <span>{c.time}</span>
                 {c.flag === "drone" && (
                   <span className="text-teal/70">DRONE</span>
