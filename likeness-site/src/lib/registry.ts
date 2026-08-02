@@ -212,6 +212,7 @@ export const ROUTES: Route[] = [
   { route: "/street", label: "The Street", fn: "The exterior sweep — street cast and doubles outside Room 14.", live: true },
   { route: "/wardrobe", label: "Wardrobe", fn: "The motel-noir lookbook — identity-locked costume department.", live: true },
   { route: "/score", label: "Score", fn: "Room tone as music — the sound archive and cue list.", live: true },
+  { route: "/journey", label: "Journey", fn: "A scroll-driven journey of Tape 03 through five rooms.", live: true },
   { route: "/devlog", label: "Devlog", fn: "Production notes and expansion modules.", live: true },
   { route: "/room-14", label: "Room 14", fn: "Explorable 3D chamber with inspectable objects.", live: true },
 ];
