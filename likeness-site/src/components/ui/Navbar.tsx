@@ -3,12 +3,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const anchors = [
-  { label: "Subjects", href: "#subjects" },
-  { label: "Visual DNA", href: "#visual-dna" },
-  { label: "Scenes", href: "#scenes" },
-];
-
 const routes = [
   { label: "Studio", href: "/studio" },
   { label: "Universe", href: "/universe" },
@@ -16,6 +10,7 @@ const routes = [
   { label: "The Street", href: "/street" },
   { label: "Wardrobe", href: "/wardrobe" },
   { label: "Score", href: "/score" },
+  { label: "Journey", href: "/journey" },
   { label: "Room Testifies", href: "/room-testifies" },
   { label: "Prompts", href: "/prompts" },
 ];
@@ -55,15 +50,6 @@ export function Navbar() {
         </a>
 
         <div className="hidden items-center gap-x-5 gap-y-1 lg:flex">
-          {anchors.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="mono text-[11px] tracking-[0.15em] text-muted uppercase transition-colors hover:text-foreground"
-            >
-              {l.label}
-            </a>
-          ))}
           {routes.map((l) => (
             <Link
               key={l.href}
