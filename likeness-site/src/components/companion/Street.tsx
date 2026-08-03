@@ -13,6 +13,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { asset } from "@/lib/base";
 import { HERO } from "@/lib/frames";
+import { STREET_SUBJECTS } from "@/lib/registry";
 import { Scanlines, RuptureField } from "@/components/atmos/Atmos";
 
 // ---- Scroll beats over the surveillance sweep ----
@@ -56,70 +57,10 @@ const STREET_BEATS: StreetBeat[] = [
   },
 ];
 
-// ---- Street cast — strangers caught on the exterior cameras ----
-type Subject = {
-  code: string;
-  name: string;
-  image: string;
-  loc: string;
-  match: string;
-  note: string;
-  double?: boolean;
-};
-
-const STREET_CAST: Subject[] = [
-  {
-    code: "EXT-01",
-    name: "THE COMMUTER",
-    image: "/stills/thoreau-watching.png",
-    loc: "BUS SHELTER · SB",
-    match: "31%",
-    note: "Waits for a bus whose route no longer runs. Reads the same page for an hour.",
-  },
-  {
-    code: "EXT-02",
-    name: "THE NEIGHBOR",
-    image: "/stills/drya-over-shoulder.png",
-    loc: "OPP. OFFICE · WINDOW",
-    match: "44%",
-    note: "Draws the curtain when the sign flickers. Draws it again a second later.",
-  },
-  {
-    code: "EXT-03",
-    name: "THE PASSERBY",
-    image: "/stills/thoreau-stealth.png",
-    loc: "PARKING APRON · N",
-    match: "62%",
-    note: "Crosses against the light without looking. The gait is borrowed from the lobby footage.",
-  },
-  {
-    code: "EXT-04",
-    name: "SUBJECT — THOREAU",
-    image: "/subjects/thoreau-portrait.png",
-    loc: "STOREFRONT GLASS",
-    match: "97%",
-    note: "You, an hour before you arrived. The timestamp disagrees. So does the reflection.",
-    double: true,
-  },
-  {
-    code: "EXT-05",
-    name: "SUBJECT — DRYA",
-    image: "/subjects/drya-select.png",
-    loc: "CROSSWALK · E",
-    match: "95%",
-    note: "Turns toward the camera the instant before it turns to her. Knows the pass count.",
-    double: true,
-  },
-  {
-    code: "EXT-06",
-    name: "THE OTHER",
-    image: "/stills/the-other.png",
-    loc: "END OF THE BLOCK",
-    match: "99.8%",
-    note: "Same face, wrong delay. Stops when you stop. Is already walking back toward the door.",
-    double: true,
-  },
-];
+// ---- Street cast — strangers caught on the exterior cameras.
+// Sourced from the shared registry so the site and the game speak the same
+// language: the high-confidence subjects resolve to locked identities. ----
+const STREET_CAST = STREET_SUBJECTS;
 
 // Contact-sheet stills pulled from the exterior sweep.
 const CONTACT = [3, 21, 44, 67, 92, 118, 141, 160].map(
@@ -448,7 +389,7 @@ export function Street() {
                       : "bg-teal/80 text-black"
                   }`}
                 >
-                  {s.match} MATCH
+                  {s.matchNum}% MATCH
                 </span>
                 <span className="mono absolute top-4 left-4 text-[9px] tracking-[0.3em] text-teal/90">
                   {s.code}

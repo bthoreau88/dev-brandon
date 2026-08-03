@@ -61,6 +61,82 @@ export const CHARACTERS: Character[] = [
   },
 ];
 
+// ---- Street subjects (exterior-cam face-lock — the /street cast) ----
+// Strangers the exterior cameras flag against the two locked identities. High
+// matches resolve to a registry character (the doubles); low matches are just
+// the block wearing a borrowed gait.
+export type StreetSubject = {
+  code: string;
+  name: string;
+  image: string;
+  loc: string;
+  matchNum: number; // face-lock confidence, 0–100
+  note: string;
+  character?: string; // linked CHARACTERS id when the match resolves
+  double?: boolean;
+};
+
+export const STREET_SUBJECTS: StreetSubject[] = [
+  {
+    code: "EXT-01",
+    name: "THE COMMUTER",
+    image: "/stills/thoreau-watching.png",
+    loc: "BUS SHELTER · SB",
+    matchNum: 31,
+    note: "Waits for a bus whose route no longer runs. Reads the same page for an hour.",
+  },
+  {
+    code: "EXT-02",
+    name: "THE NEIGHBOR",
+    image: "/stills/drya-over-shoulder.png",
+    loc: "OPP. OFFICE · WINDOW",
+    matchNum: 44,
+    note: "Draws the curtain when the sign flickers. Draws it again a second later.",
+  },
+  {
+    code: "EXT-03",
+    name: "THE PASSERBY",
+    image: "/stills/thoreau-stealth.png",
+    loc: "PARKING APRON · N",
+    matchNum: 62,
+    note: "Crosses against the light without looking. The gait is borrowed from the lobby footage.",
+  },
+  {
+    code: "EXT-04",
+    name: "SUBJECT — THOREAU",
+    image: "/subjects/thoreau-portrait.png",
+    loc: "STOREFRONT GLASS",
+    matchNum: 97,
+    note: "You, an hour before you arrived. The timestamp disagrees. So does the reflection.",
+    character: "CHR_THOREAU_001",
+    double: true,
+  },
+  {
+    code: "EXT-05",
+    name: "SUBJECT — DRYA",
+    image: "/subjects/drya-select.png",
+    loc: "CROSSWALK · E",
+    matchNum: 95,
+    note: "Turns toward the camera the instant before it turns to her. Knows the pass count.",
+    character: "CHR_DRYA_001",
+    double: true,
+  },
+  {
+    code: "EXT-06",
+    name: "THE OTHER",
+    image: "/stills/the-other.png",
+    loc: "END OF THE BLOCK",
+    matchNum: 99.8,
+    note: "Same face, wrong delay. Stops when you stop. Is already walking back toward the door.",
+    character: "CHR_DARK_THOREAU_001",
+    double: true,
+  },
+];
+
+// Street sightings that resolve to a given character id.
+export const streetSightingsFor = (characterId: string): StreetSubject[] =>
+  STREET_SUBJECTS.filter((s) => s.character === characterId);
+
 // ---- Inspectable evidence (asset_manifest.csv + § 10 vertical slice) ----
 export type Evidence = {
   id: string;

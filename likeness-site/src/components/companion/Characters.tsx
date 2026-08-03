@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { CHARACTERS } from "@/lib/registry";
+import { CHARACTERS, streetSightingsFor } from "@/lib/registry";
 import { asset } from "@/lib/base";
 import { CompanionShell } from "./CompanionShell";
 
@@ -14,7 +15,13 @@ export function Characters() {
       intro="Two people, and the wrong double answering for them. Every character is a registry item with an identity lock and a drift risk — recognizable in gameplay, cinematics, posters, and here. The threat is not only the double. The threat is that your memory might be the edited copy."
     >
       <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-3">
-        {CHARACTERS.map((c, i) => (
+        {CHARACTERS.map((c, i) => {
+          const sightings = streetSightingsFor(c.id);
+          const topMatch = sightings.reduce(
+            (m, s) => Math.max(m, s.matchNum),
+            0,
+          );
+          return (
           <motion.article
             key={c.id}
             initial={{ opacity: 0, y: 28 }}
@@ -76,9 +83,23 @@ export function Characters() {
                   {c.driftRisk}
                 </p>
               </div>
+              {sightings.length > 0 && (
+                <Link
+                  href="/street"
+                  className="mono group/st flex items-center justify-between rounded-sm border border-teal/25 bg-teal/[0.04] px-3 py-2 text-[10px] tracking-[0.2em] text-teal transition-colors hover:border-teal/50"
+                >
+                  <span>
+                    SEEN ON THE STREET · {sightings.length}× · {topMatch}% LOCK
+                  </span>
+                  <span className="transition-transform group-hover/st:translate-x-1">
+                    →
+                  </span>
+                </Link>
+              )}
             </div>
           </motion.article>
-        ))}
+          );
+        })}
       </div>
     </CompanionShell>
   );
