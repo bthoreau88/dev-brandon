@@ -6,7 +6,7 @@
 // leaf from mountain to cup), rebuilt to LIKENESS lore and the OVS dark system,
 // native to this static site. Reuses only the shared asset helper.
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -80,15 +80,22 @@ const STAGES: Stage[] = [
 function Chapter({
   stage,
   index,
-  onActive,
+  registerEl,
 }: {
   stage: Stage;
   index: number;
-  onActive: (i: number) => void;
+  registerEl: (i: number, el: HTMLElement | null) => void;
 }) {
-  const ref = useRef<HTMLElement>(null);
+  const localRef = useRef<HTMLElement>(null);
+  const setRef = useCallback(
+    (el: HTMLElement | null) => {
+      localRef.current = el;
+      registerEl(index, el);
+    },
+    [index, registerEl],
+  );
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: localRef,
     offset: ["start end", "end start"],
   });
   // parallax + subtle zoom on the pinned background
@@ -101,15 +108,8 @@ function Chapter({
   );
   const textY = useTransform(scrollYProgress, [0.18, 0.4], [40, 0]);
 
-  // mark active when this chapter's midpoint is near viewport center
-  useEffect(() => {
-    return scrollYProgress.on("change", (v) => {
-      if (v > 0.35 && v < 0.7) onActive(index);
-    });
-  }, [scrollYProgress, index, onActive]);
-
   return (
-    <section ref={ref} className="relative h-[190vh]">
+    <section ref={setRef} className="relative h-[190vh]">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
         {/* pinned parallax background */}
         <motion.div style={{ y, scale }} className="absolute inset-0">
@@ -162,6 +162,39 @@ function Chapter({
 export function Journey() {
   const [active, setActive] = useState(0);
 
+  // chapter DOM elements, reported up via callback refs (no ref reads in render).
+  const elsRef = useRef<(HTMLElement | null)[]>([]);
+  const registerEl = useCallback((i: number, el: HTMLElement | null) => {
+    elsRef.current[i] = el;
+  }, []);
+
+  // active = the chapter whose band contains the viewport center. Continuous,
+  // so it never goes stale between chapters (any screen size).
+  useEffect(() => {
+    let ticking = false;
+    const update = () => {
+      const center = window.scrollY + window.innerHeight / 2;
+      let idx = 0;
+      elsRef.current.forEach((el, i) => {
+        if (el && center >= el.offsetTop) idx = i;
+      });
+      setActive(idx);
+      ticking = false;
+    };
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+    };
+  }, []);
+
   // hero → fade its scroll cue once you start
   const heroRef = useRef<HTMLElement>(null);
   const { scrollYProgress: heroProg } = useScroll({
@@ -182,7 +215,23 @@ export function Journey() {
         </Link>
       </div>
 
-      {/* fixed progress rail */}
+      {/* mobile progress: top fill bar + current-stage pill */}
+      <div className="pointer-events-none fixed inset-x-0 top-0 z-40 md:hidden">
+        <div className="h-[3px] w-full bg-white/10">
+          <div
+            className="h-full bg-accent transition-all duration-500 ease-out"
+            style={{ width: `${((active + 1) / STAGES.length) * 100}%` }}
+          />
+        </div>
+        <div className="flex justify-center pt-3">
+          <span className="mono glass rounded-full px-3.5 py-1.5 text-[9px] tracking-[0.25em] text-teal">
+            {STAGES[active].n} · {STAGES[active].title.toUpperCase()} ·{" "}
+            {active + 1}/{STAGES.length}
+          </span>
+        </div>
+      </div>
+
+      {/* fixed progress rail (desktop) */}
       <div className="pointer-events-none fixed left-5 top-1/2 z-40 hidden -translate-y-1/2 flex-col gap-4 md:flex">
         {STAGES.map((s, i) => (
           <div key={s.key} className="flex items-center gap-3">
@@ -248,7 +297,7 @@ export function Journey() {
 
       {/* ============ CHAPTERS ============ */}
       {STAGES.map((s, i) => (
-        <Chapter key={s.key} stage={s} index={i} onActive={setActive} />
+        <Chapter key={s.key} stage={s} index={i} registerEl={registerEl} />
       ))}
 
       {/* ============ closing ============ */}
