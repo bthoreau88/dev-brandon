@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://bthoreau88.github.io/likeness-universe/sitemap.xml
