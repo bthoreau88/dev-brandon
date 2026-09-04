@@ -1,11 +1,11 @@
 // File: app/build.gradle.kts (module-level)
 
 plugins {
-    // 1) Apply the Android application plugin (version is inherited from root build.gradle.kts)
-    id("com.android.application")
-
-    // 2) Apply the Kotlin Android plugin (Android plugin needs it—even if your code is Java)
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    // Kotlin 2.0+ ships the Compose compiler as a decoupled Gradle plugin,
+    // versioned together with Kotlin — no separate composeCompiler version to match.
+    alias(libs.plugins.kotlin.compose)
 }
 
 android {
@@ -35,25 +35,33 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
-    // Optional: if you have any Kotlin code (or if the Android plugin expects it)
     kotlinOptions {
         jvmTarget = "17"
     }
+
+    buildFeatures {
+        // Enables Jetpack Compose. The View-based (AppCompat) screens and the
+        // Compose screens coexist through Compose's first-class View interop.
+        compose = true
+    }
+
     buildToolsVersion = "36.0.0"
 }
 
 dependencies {
-    // Required for AppCompatActivity, Intent, Toast, findViewById, etc.
-    implementation("androidx.appcompat:appcompat:1.7.1")
+    // --- View system (existing login / register / home screens) ---
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.constraintlayout)
 
-    // Material Components (optional, for Material-styled Buttons, etc.)
-    implementation("com.google.android.material:material:1.10.0")
-
-    // Android core-ktx (optional but harmless if you don’t write Kotlin)
-    implementation("androidx.core:core-ktx:1.12.0")
-
-    // ConstraintLayout (optional; remove if you only use LinearLayout/FrameLayout)
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation(libs.androidx.ui.graphics.android)
-    implementation(libs.androidx.foundation.android)
+    // --- Jetpack Compose (multilingual phrase feature) ---
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.foundation)
+    debugImplementation(libs.androidx.ui.tooling)
 }

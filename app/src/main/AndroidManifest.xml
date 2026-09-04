@@ -17,5 +17,6 @@
 
         <activity android:name=".register.CreateAccountActivity"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".phrase.PhraseActivity"/>
     </application>
 </manifest>

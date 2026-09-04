@@ -19,4 +19,5 @@
 
     <!-- Main screen greeting -->
     <string name="home_greeting">Welcome to QuickPhrase</string>
+    <string name="btn_open_phrases">Open Phrasebook</string>
 </resources>
