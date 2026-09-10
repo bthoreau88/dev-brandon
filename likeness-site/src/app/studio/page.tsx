@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Studio } from "@/components/companion/Studio";
 import { socialCard } from "@/lib/base";
+import { FollowCTA } from "@/components/sections/FollowCTA";
 
 const title = "Studio // Omnia Vanitas Studios — LIKENESS";
 const description =
@@ -16,6 +17,7 @@ export default function StudioPage() {
   return (
     <main className="grain min-h-screen">
       <Studio />
+      <FollowCTA variant="compact" />
     </main>
   );
 }

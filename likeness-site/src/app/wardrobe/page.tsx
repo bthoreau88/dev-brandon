@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Wardrobe } from "@/components/companion/Wardrobe";
 import { socialCard } from "@/lib/base";
+import { FollowCTA } from "@/components/sections/FollowCTA";
 
 const title = "Wardrobe // LIKENESS Universe — OVS";
 const description =
@@ -16,6 +17,7 @@ export default function WardrobePage() {
   return (
     <main className="grain min-h-screen">
       <Wardrobe />
+      <FollowCTA variant="compact" />
     </main>
   );
 }

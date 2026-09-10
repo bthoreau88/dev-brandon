@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Score } from "@/components/companion/Score";
 import { socialCard } from "@/lib/base";
+import { FollowCTA } from "@/components/sections/FollowCTA";
 
 const title = "Score // LIKENESS Universe — OVS";
 const description =
@@ -16,6 +17,7 @@ export default function ScorePage() {
   return (
     <main className="grain min-h-screen">
       <Score />
+      <FollowCTA variant="compact" />
     </main>
   );
 }

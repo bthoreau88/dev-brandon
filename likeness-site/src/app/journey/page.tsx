@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Journey } from "@/components/companion/Journey";
 import { socialCard } from "@/lib/base";
+import { FollowCTA } from "@/components/sections/FollowCTA";
 
 const title = "The Journey of Tape 03 // LIKENESS Universe — OVS";
 const description =
@@ -16,6 +17,7 @@ export default function JourneyPage() {
   return (
     <main className="grain min-h-screen">
       <Journey />
+      <FollowCTA variant="compact" />
     </main>
   );
 }
