@@ -13,6 +13,23 @@ export const NORTH_STAR = {
   setting: "The Dellwood motel · Room 14",
 };
 
+// ---- Audience intake — the follow / wishlist call-to-action. -----------------
+// ONE place to control the site-wide CTA. Fill a value to activate that channel
+// everywhere; leave it "" to hide it. Because the site is a static export,
+// `newsletterAction` must be a form POST endpoint (e.g. a Formspree or
+// Buttondown URL) for email capture to actually submit.
+export const INTAKE = {
+  // "https://store.steampowered.com/app/XXXXXX/" → "Wishlist on Steam"
+  steam: "",
+  // "https://discord.gg/XXXXXXX" → "Join the Discord"
+  discord: "",
+  // form POST endpoint, e.g. "https://formspree.io/f/xxxxxxx" → email signup
+  newsletterAction: "",
+  // Dev-follow — live today; the low-friction way to follow the build.
+  github: "https://github.com/bthoreau88/likeness-universe",
+};
+
+
 // ---- Characters (character_registry.csv) ----
 export type Character = {
   id: string;

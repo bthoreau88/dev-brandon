@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Street } from "@/components/companion/Street";
 import { socialCard } from "@/lib/base";
+import { FollowCTA } from "@/components/sections/FollowCTA";
 
 const title = "The Street // LIKENESS Universe — OVS";
 const description =
@@ -16,6 +17,7 @@ export default function StreetPage() {
   return (
     <main className="grain min-h-screen">
       <Street />
+      <FollowCTA variant="compact" />
     </main>
   );
 }

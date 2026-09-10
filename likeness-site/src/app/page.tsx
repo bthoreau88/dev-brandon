@@ -16,6 +16,7 @@ import { ConceptFrames } from "@/components/sections/ConceptFrames";
 import { Systems } from "@/components/sections/Systems";
 import { Threads } from "@/components/sections/Threads";
 import { Choice } from "@/components/sections/Choice";
+import { FollowCTA } from "@/components/sections/FollowCTA";
 import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
@@ -43,6 +44,7 @@ export default function Home() {
         <Threads />
         <Choice />
       </main>
+      <FollowCTA />
       <Footer />
     </>
   );
